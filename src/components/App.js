@@ -4,8 +4,9 @@ import User from "./test/User"
 import Admin from "./test/Admin"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Route, Switch } from "react-router-dom"
+import "./scss/global/GlobalStyles.scss"
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Switch>
@@ -16,5 +17,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
