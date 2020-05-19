@@ -21,8 +21,17 @@
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
-		"extends": "react-app",
+		"extends": [
+			"react-app",
+			"prettier"
+		],
 		"rules": {
+			"react/jsx-max-props-per-line": [
+				10,
+				{
+					"maximum": 10
+				}
+			],
 			"quotes": [
 				"warn",
 				"double"

@@ -6,6 +6,7 @@ import Header from "./pageheader/PageHeader"
 import Footer from "./pagefooter/PageFooter"
 import About from "./pages/about/About"
 import BrowseProducts from "./pages/browseproducts/BrowseProducts"
+import BrowseProducts2 from "./pages/browseproducts/BrowseProducts2"
 
 export default function App() {
 	return (
@@ -14,6 +15,7 @@ export default function App() {
 			<Router>
 				<Switch>
 					<Route path="/products" component={BrowseProducts}></Route>
+					<Route path="/products2" component={BrowseProducts2}></Route>
 					<Route path="/about" component={About}></Route>
 					<Route path="/">
 						<Redirect to={{ pathname: "/products" }} />
