@@ -1,9 +1,9 @@
 import React from "react"
-import styles from "./BrowseProducts2.module.scss"
+import styles from "./ProductBrowse.module.scss"
 
 
 
-export default function ProductPage2() {
+export default function ProductBrowse() {
     return (
         <div className={styles.Container}>
             <div className={styles.Categories}>

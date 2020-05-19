@@ -5,24 +5,24 @@ import "./scss/global/GlobalStyles.scss"
 import Header from "./pageheader/PageHeader"
 import Footer from "./pagefooter/PageFooter"
 import About from "./pages/about/About"
-import BrowseProducts from "./pages/browseproducts/BrowseProducts"
-import BrowseProducts2 from "./pages/browseproducts/BrowseProducts2"
+import ProductBrowse from "./pages/productbrowse/ProductBrowse"
+import Home from "./pages/home/Home"
 
 export default function App() {
 	return (
 		<div>
-			<Header />
 			<Router>
+				<Header />
 				<Switch>
-					<Route path="/products" component={BrowseProducts}></Route>
-					<Route path="/products2" component={BrowseProducts2}></Route>
+					<Route path="/product-browse" component={ProductBrowse}></Route>
 					<Route path="/about" component={About}></Route>
-					<Route path="/">
-						<Redirect to={{ pathname: "/products" }} />
+					<Route path="/" exact component={Home}></Route>
+					<Route path="*" component={Home}>
+						<Redirect to={{ pathName: "/" }} />
 					</Route>
 				</Switch>
+				<Footer />
 			</Router>
-			<Footer />
 		</div>
 	)
 }

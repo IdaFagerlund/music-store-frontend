@@ -1,9 +1,9 @@
 import React from "react"
-import styles from "./BrowseProducts.module.scss"
+import styles from "./Home.module.scss"
 import Piano from "../../../assets/piano1.jpg"
 
 
-export default function ProductPage() {
+export default function Home() {
     return (
         <div className={styles.Container}>
             <div><img src={Piano} alt="Piano" /></div>

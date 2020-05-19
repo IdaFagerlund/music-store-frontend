@@ -1,9 +1,11 @@
 import React from "react"
 import styles from "./PageHeader.module.scss"
-import { MusicNoteM, MusicNoteS, Thes, NewI, NewM, Lines } from "../utils/Icons"
 import MusicStoreLogo from "../../assets/MusicStoreLogo.png"
+import { useHistory } from "react-router-dom"
 
 export default function PageHeader() {
+	const history = useHistory()
+
 	const NavigationBar = () => {
 		return <div>navbar</div>
 	}
@@ -20,9 +22,9 @@ export default function PageHeader() {
 				<img src={MusicStoreLogo} alt="MusicStoreLogo" width="320" />
 				<hr />
 				<ul className={styles.NavigationMenu}>
-					<li><p>Home</p></li>
-					<li><p>Browse products</p></li>
-					<li><p>About</p></li>
+					<li onClick={() => history.push("/")}><p>Home</p></li>
+					<li onClick={() => history.push("/product-browse")}><p>Browse products</p></li>
+					<li onClick={() => history.push("/about")}><p>About</p></li>
 				</ul>
 			</div>
 
