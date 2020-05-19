@@ -13,17 +13,20 @@ export default function PageHeader() {
 	}
 
 	return (
-		<header className={styles.Header}>
-			<h1>MusicStore</h1>
-			{/* <img src={MusicStoreLogo} alt="MusicStoreLogo" width="400" /> */}
-			<hr />
-			<div className={styles.Navigation}>
-				<p>Home</p>
-				<p>Browse products</p>
-				<p>About</p>
+		<header className={styles.HeadersContainer}>
 
+			<div className={styles.TopHeader}>
+
+				<img src={MusicStoreLogo} alt="MusicStoreLogo" width="320" />
+				<hr />
+				<ul className={styles.NavigationMenu}>
+					<li><p>Home</p></li>
+					<li><p>Browse products</p></li>
+					<li><p>About</p></li>
+				</ul>
 			</div>
-			<div className={styles.BottomLine}></div>
+
+			{/* <div className={styles.BottomLine}></div>
 			<div className={styles.SecondHeader}>
 				<div>
 					<div>Seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeearch</div>
@@ -32,7 +35,9 @@ export default function PageHeader() {
 						<div>ShoppingCart</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
+
+
 			{/* <div>
 				<SearchBar />
 				<div>login or profile</div>
