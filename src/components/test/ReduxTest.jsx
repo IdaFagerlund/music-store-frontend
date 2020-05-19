@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { testFetch } from "../../redux/actions/test/testactions"
-import styles from "../scss/ReduxTest.module.scss"
+import styles from "../../scss/ReduxTest.module.scss"
 
 export default function Test() {
 	const testData = useSelector((state) => state.testreducer)
