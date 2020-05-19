@@ -2,23 +2,17 @@ import React from "react"
 import styles from "./PageHeader.module.scss"
 import MusicStoreLogo from "../../assets/MusicStoreLogo.png"
 import { useHistory } from "react-router-dom"
+import ProductSearch from "./ProductSearch"
+import ShoppingCart from "./ShoppingCart"
+import { UserIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "../utils/Icons"
 
 export default function PageHeader() {
 	const history = useHistory()
 
-	const NavigationBar = () => {
-		return <div>navbar</div>
-	}
-
-	const SearchBar = () => {
-		return <div>searchbar</div>
-	}
-
 	return (
-		<header className={styles.HeadersContainer}>
+		<header className={styles.PageHeader}>
 
 			<div className={styles.TopHeader}>
-
 				<img src={MusicStoreLogo} alt="MusicStoreLogo" width="320" />
 				<hr />
 				<ul className={styles.NavigationMenu}>
@@ -28,23 +22,17 @@ export default function PageHeader() {
 				</ul>
 			</div>
 
-			{/* <div className={styles.BottomLine}></div>
-			<div className={styles.SecondHeader}>
-				<div>
-					<div>Seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeearch</div>
-					<div>
-						<div>MyPage</div>
-						<div>ShoppingCart</div>
-					</div>
+			<div className={styles.BottomHeader}>
+				<div className={styles.ProductSearch}>
+					<div className={styles.MagnifyingGlassIconContainer}><MagnifyingGlassIcon /></div>
+					<input type="text" placeholder="Search..." />
 				</div>
-			</div> */}
+				<div className={styles.UserAndShoppingCartContainer}>
+					<div><UserIcon /><p>My page</p></div>
+					<div><ShoppingCartIcon /><p>Shopping cart</p></div>
+				</div>
+			</div>
 
-
-			{/* <div>
-				<SearchBar />
-				<div>login or profile</div>
-				<div>shoppingcart</div>
-			</div> */}
 		</header>
 	)
 }
