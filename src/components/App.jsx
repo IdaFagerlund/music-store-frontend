@@ -14,8 +14,8 @@ export default function App() {
 			<Router>
 				<Header />
 				<Switch>
-					<Route path="/product-browse" component={ProductBrowse}></Route>
-					<Route path="/about" component={About}></Route>
+					<Route path="/product-browse" exact component={ProductBrowse}></Route>
+					<Route path="/about" exact component={About}></Route>
 					<Route path="/" exact component={Home}></Route>
 					<Route path="*" component={Home}>
 						<Redirect to={{ pathName: "/" }} />
