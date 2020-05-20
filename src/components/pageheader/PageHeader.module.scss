@@ -91,6 +91,12 @@
 		.BottomHeader {
 			flex-direction: column-reverse;
 			padding-bottom: 0.7em;
+			
+			.ProductSearch {
+				.MagnifyingGlassIconContainer {
+					padding: 0.18em 0.1em 0 0.3em;
+				}
+			}
 		}
 	}
 	
