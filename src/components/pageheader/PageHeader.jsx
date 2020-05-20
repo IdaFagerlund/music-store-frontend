@@ -9,9 +9,8 @@ import { UserIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "../utils/Icons"
 export default function PageHeader() {
 	const history = useHistory()
 
-	return (
-		<header className={styles.PageHeader}>
-
+	const TopHeader = () => {
+		return (
 			<div className={styles.TopHeader}>
 				<img src={MusicStoreLogo} alt="MusicStoreLogo" width="320" />
 				<hr />
@@ -21,18 +20,29 @@ export default function PageHeader() {
 					<li onClick={() => history.push("/about")}><p>About</p></li>
 				</ul>
 			</div>
+		)
+	}
 
+	const BottomHeader = () => {
+		return (
 			<div className={styles.BottomHeader}>
 				<div className={styles.ProductSearch}>
 					<div className={styles.MagnifyingGlassIconContainer}><MagnifyingGlassIcon /></div>
 					<input type="text" placeholder="Search..." />
 				</div>
 				<div className={styles.UserAndShoppingCartContainer}>
-					<div><UserIcon /><p>My page</p></div>
+					<div><UserIcon /><p>Login</p></div>
 					<div><ShoppingCartIcon /><p>Shopping cart</p></div>
 				</div>
 			</div>
+		)
+	}
 
+	return (
+		<header className={styles.PageHeader}>
+			<TopHeader />
+			<BottomHeader />
 		</header>
 	)
+
 }

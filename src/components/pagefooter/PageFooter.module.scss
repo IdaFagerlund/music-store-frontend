@@ -1,6 +1,8 @@
-.Footer {
-	background-color: rgb(63, 63, 63);
-	padding: 0.4em;
-	color: white;
+@import "../scss/global/Colors";
+
+.PageFooter {
+	background-color: $dark-grey;
+	padding: 1em;
+	color: $white;
 	text-align: center;
 }

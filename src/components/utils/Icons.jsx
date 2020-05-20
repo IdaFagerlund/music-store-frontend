@@ -2,8 +2,8 @@ import React from "react"
 
 export const UserIcon = ({ color = "#ffffff", size = 20 }) => {
 	return (
-		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 1280.000000 1231.000000" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(0.000000,1231.000000) scale(0.100000,-0.100000)" fill={color} stroke="none">
+		<svg width={size} height={size} viewBox="0 0 1280.000000 1231.000000" preserveAspectRatio="xMidYMid meet">
+			<g transform="translate(0.000000,1231.000000) scale(0.100000,-0.100000)" fill={color}>
 				<path d="M6130 12304 c-19 -2 -84 -9 -145 -15 -700 -67 -1430 -353 -2000 -783 -233 -175 -534 -465 -707 -681 -709 -884 -1016 -1994 -857 -3100 136 -946 604
 				-1817 1309 -2438 141 -124 340 -275 478 -365 l93 -60 -53 -12 c-142 -33 -472 -125 -628 -176 -1667 -538 -2896 -1531 -3385 -2733 -150 -369 -235 -788 -235
 				-1161 0 -105 33 -638 46 -737 l5 -43 6349 0 6349 0 5 43 c13 98 46 631 46 732 0 316 -60 668 -167 980 -436 1276 -1666 2326 -3398 2900 -192 64 -561 170
@@ -17,8 +17,8 @@ export const UserIcon = ({ color = "#ffffff", size = 20 }) => {
 
 export const ShoppingCartIcon = ({ color = "#ffffff", size = 25 }) => {
 	return (
-		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 1280.000000 986.000000" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(1270.000000,986.000000) scale(-0.100000,-0.100000)" fill={color} stroke="none">
+		<svg width={size} height={size} viewBox="0 0 1280.000000 986.000000" preserveAspectRatio="xMidYMid meet">
+			<g transform="translate(1270.000000,986.000000) scale(-0.100000,-0.100000)" fill={color}>
 				<path d="M11495 9760 c-22 -3 -57 -14 -77 -24 -42 -20 -139 -120 -165 -169 -9-18 -168 -405 -354 -862 l-337 -830 -2259 -3 c-2550 -3 -5675 11 -5713 26
 				l-24 9 29 15 c27 14 -1 16 -346 22 -206 4 -750 6 -1209 4 -935 -3 -866 2 -945 -76 -56 -56 -102 -160 -92 -211 21 -110 73 -299 102 -370 26 -66 1023 -3337
 				1375 -4511 52 -173 58 -205 58 -280 -1 -101 18 -156 68 -199 58 -52 84 -54 489 -47 433 8 475 11 475 36 0 15 13 18 87 24 205 15 1725 37 5263 76 514 6
@@ -42,14 +42,36 @@ export const ShoppingCartIcon = ({ color = "#ffffff", size = 25 }) => {
 
 export const MagnifyingGlassIcon = ({ color = "#3f3f3f", size = 15 }) => {
 	return (
-		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill={color} stroke="none">
+		<svg width={size} height={size} viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+			<g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill={color}>
 				<path d="M4470 11700 c-1261 -110 -2368 -843 -2959 -1961 -414 -785 -529 -1723 -315 -2584 237 -951 844 -1771 1688 -2278 1121 -673 2523 -695 3659 -59
 				119 67 333 204 402 258 l30 24 1965 -1964 c1529 -1528 1977 -1970 2020 -1994 199 -110 430 -72 600 98 169 169 208 403 98 599 -24 44 -466 492 -1994 2021
 				l-1964 1965 24 30 c54 69 189 279 257 400 427 762 564 1652 388 2517 -115 570 -355 1077 -740 1567 -103 131 -411 441 -539 543 -570 452 -1194 718 -1890 803
 				-150 19 -583 27 -730 15z m592 -925 c953 -101 1780 -684 2192 -1545 115 -241 187 -467 231 -725 135 -793 -71 -1588 -574 -2212 -96 -120 -295 -318 -414
 				-413 -412 -329 -897 -529 -1432 -591 -137 -16 -456 -16 -595 0 -529 60 -1024 266 -1440 597 -109 87 -327 305 -414 414 -311 390 -508 848 -583 1355 -25 171
 				-25 593 0 755 51 330 131 585 269 862 323 647 891 1142 1573 1372 193 66 426 116 620 135 145 14 419 12 567 -4z"/>
+			</g>
+		</svg>
+	)
+}
+
+export const ArrowRightIcon = ({ color = "#ffffff", size = 40 }) => {
+	return (
+		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
+			<g transform="translate(0.000000,800.000000) scale(1,1) rotate(-90)" fill={color}>
+				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
+				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+			</g>
+		</svg>
+	)
+}
+
+export const ArrowLeftIcon = ({ color = "#ffffff", size = 40 }) => {
+	return (
+		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
+			<g transform="translate(530.000000,-165.000000) scale(1,1) rotate(90)" fill={color}>
+				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
+				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
 			</g>
 		</svg>
 	)

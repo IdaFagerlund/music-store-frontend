@@ -1,4 +1,5 @@
 @import "../scss/global/Colors";
+@import "../scss/global/Variables";
 
 .PageHeader {
 	background-color: $dark-grey;
@@ -87,7 +88,7 @@
 		}
 	}
 
-	@media screen and (max-width: 750px){
+	@media screen and (max-width: $responsive-size-small) {
 		.BottomHeader {
 			flex-direction: column-reverse;
 			padding-bottom: 0.7em;

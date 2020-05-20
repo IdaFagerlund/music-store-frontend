@@ -1,83 +1,161 @@
-.Container {
-    //background-color: rgb(179, 179, 179);
-    //padding: 20em;
+@import "../../scss/global/Colors";
+@import "../../scss/global/Variables";
 
-    img {
-        width: 100%;
-        height: 30em;
-        opacity: 45%;
-    }
+.Home {
 
+    .HomePageImage {
         position: relative;
-    >div:nth-child(2) {
-        position: absolute;
-        top: 2.5em;
-        left: 20em;
 
-        >div:nth-child(2) {
-            padding: 1em;
-            background-color: rgb(218, 174, 107);
-            width: 30%;
-            margin-top: 1em;
-
-        }
-
-        >div:nth-child(3) {
-            position: absolute;
-            top: 4.8em;
-            left: 35em;
-         
+        img {
+            display: block;
             width: 100%;
+            min-height: 20em;
+            max-height: 40em;
+            opacity: 45%;
         }
 
-        
-    }
-    p {
-        
-        font-size: 45px;
-        font-style: italic;
-    
-        
-        line-height: 1.8em;
-    }
-
-
-
-
-
-
-
-    .Body {
-        background-color: rgb(250, 250, 250);
-        text-align: center;
-        margin-top: 2em;
-        h3 {
-            font-size: 40px;
-        }
-
-        .Featured {
+        .InfoOnImageContainer {
+            position: absolute;
+            top: 18%;
+            left: 10%;
             
-            width: 45%;
-            margin: 3em auto;
-            display: flex;
-            justify-content: space-between;
-
-            .Arrow {
-                padding: 1.5em;
-                background-color: rgb(216, 216, 216);
-                margin: 1em;
-                border-radius: 3em;
-                height: 5%;
-                margin-top: 6em;
+            h1 {
+                font-size: 50px;
+                font-style: italic;
+                font-weight: normal;
             }
-            .Item{
 
-                padding: 7em;
-                margin: 0.3em;
-                background-color: rgb(151, 151, 151);
+            h1:nth-child(2) {
+                padding: 0.3em 0 0.8em 2em;
+            }
+
+            .BrowseProductsButton {
+                background-color: $orange;
+                padding: 1em;
+                width: 13.5em;
+                border-radius: 0.3em;
+                position: relative;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .ButtonArrowEdge {
+                    position: absolute;
+                    top: 0.49em;
+                    right: -1.1em;
+
+                    padding: 1.29em;
+                    background-color: $orange;
+                    transform: rotate(45deg);
+                    border-radius: 0.3em; 
+                }
+
+                p {
+                    color: $white;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
             }
         }
     }
 
+    @media screen and (max-width: $responsive-size-small) {
+
+        .HomePageImage {
+
+            .InfoOnImageContainer {
+                top: 10%;
+                left: 5%;
+            }
+        }
+	}
+
     
+
 }
+
+// .Home {
+//     //background-color: rgb(179, 179, 179);
+//     //padding: 20em;
+
+//     img {
+//         width: 100%;
+//         min-height: 20em;
+//         max-height: 40em;
+//         opacity: 45%;
+//     }
+
+//         position: relative;
+//     >div:nth-child(2) {
+//         position: absolute;
+//         top: 2.5em;
+//         left: 20em;
+
+//         >div:nth-child(2) {
+//             padding: 1em;
+//             background-color: rgb(218, 174, 107);
+//             width: 30%;
+//             margin-top: 1em;
+
+//         }
+
+//         >div:nth-child(3) {
+//             position: absolute;
+//             top: 4.8em;
+//             left: 35em;
+         
+//             width: 100%;
+//         }
+
+        
+//     }
+//     p {
+        
+//         font-size: 45px;
+//         font-style: italic;
+    
+        
+//         line-height: 1.8em;
+//     }
+
+
+
+
+
+
+
+//     .Body {
+//         background-color: rgb(250, 250, 250);
+//         text-align: center;
+//         margin-top: 2em;
+//         h3 {
+//             font-size: 40px;
+//         }
+
+//         .Featured {
+            
+//             width: 45%;
+//             margin: 3em auto;
+//             display: flex;
+//             justify-content: space-between;
+
+//             .Arrow {
+//                 padding: 1.5em;
+//                 background-color: rgb(216, 216, 216);
+//                 margin: 1em;
+//                 border-radius: 3em;
+//                 height: 5%;
+//                 margin-top: 6em;
+//             }
+//             .Item{
+
+//                 padding: 7em;
+//                 margin: 0.3em;
+//                 background-color: rgb(151, 151, 151);
+//             }
+//         }
+//     }
+
+    
+// }

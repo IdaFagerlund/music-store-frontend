@@ -4,7 +4,7 @@ import styles from "./ShoppingCart.module.scss"
 export default function ShoppingCart() {
     return (
         <div>
-            cart
+            shopping cart popup
         </div>
     )
 }
