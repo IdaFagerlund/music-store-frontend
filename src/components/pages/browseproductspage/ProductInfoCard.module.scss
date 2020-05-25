@@ -2,11 +2,68 @@
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductInfoCard {
-
-    background-color: rgb(206, 206, 206);
+    position: relative;
+    background-color: $white;
+    border-radius: 0.25em;
+    height: 33.2em;
     padding: 18px;
     // total px = image width + padding on each side
     width: 256px + 18px + 18px;
+
+    box-shadow:         3px 3px 12px 0px rgba(116, 116, 116, 0.75);
+    -moz-box-shadow:    3px 3px 12px 0px rgba(116, 116, 116, 0.75);
+    -webkit-box-shadow: 3px 3px 12px 0px rgba(116, 116, 116, 0.75);
+    
+
+    img {
+        margin-bottom: 1em;
+    }
+
+    h1 {
+        font-style: italic;
+    }
+
+    .BottomRow {
+        display: flex;
+        position: absolute;
+        bottom: 18px;
+        right: 18px;
+        
+        
+    }
+
+    .AddToShoppingCartButton {
+        background-color: $green;
+        display: flex;
+        align-items: center;
+        padding: 0 0.7em;
+        &:hover {
+            cursor: pointer;
+            background-color: $green-hover;
+        }
+    }
+
+    .ViewProductDetailsButton {
+        display: flex;
+        align-items: center;
+        background-color: $orange;
+        padding: 1em;
+        margin-left: 0.2em;
+        color: white;
+        font-weight: bold;
+
+        p {
+            margin-right: 2.5em;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $orange-hover;
+        }
+
+    }
+
+    
 
     // display: flex;
     // flex-direction: column;
