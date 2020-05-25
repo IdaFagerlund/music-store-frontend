@@ -1,4 +1,4 @@
-@import "../../scss/global/Colors";
+@import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .HomePage {
@@ -72,7 +72,7 @@
 	}
 
     .FeaturedProductsSlideShow {
-        background-color: grey;
+        //background-color: grey;
     }
     
 

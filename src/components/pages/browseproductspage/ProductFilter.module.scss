@@ -1,6 +1,12 @@
-@import "../../scss/global/Colors";
+@import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductFilter {
+    width: 100%;
+
+    .FilterHeader {
+        background-color: grey;
+        padding: 3em;
+    }
 
 }

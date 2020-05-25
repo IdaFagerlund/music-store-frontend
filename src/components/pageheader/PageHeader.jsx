@@ -31,7 +31,7 @@ export default function PageHeader() {
 					<input type="text" placeholder="Search..." />
 				</div>
 				<div className={styles.UserAndShoppingCartContainer}>
-					<div><UserIcon /><p>Login</p></div>
+					<div><UserIcon /><p>My page</p></div>
 					<div><ShoppingCartIcon /><p>Shopping cart</p></div>
 				</div>
 			</div>

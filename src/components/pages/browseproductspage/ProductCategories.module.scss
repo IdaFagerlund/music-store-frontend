@@ -1,6 +1,39 @@
-@import "../../scss/global/Colors";
+@import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
+@mixin categoriesRowStyle($backgroundColor) {
+
+    background-color: $backgroundColor;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            width: 80%;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            li {
+                padding: 1em 3em;
+                &:hover {
+                    background-color: darken($backgroundColor, $percent-darker-at-hover);
+                    cursor: pointer;
+                }
+            }
+        }
+
+}
+
 .ProductCategories {
+    color: white;
+
+    .MainCategories {
+        @include categoriesRowStyle($grey3)
+    }
+
+    .SubCategories {
+        @include categoriesRowStyle(($grey2))
+    }
 
 }

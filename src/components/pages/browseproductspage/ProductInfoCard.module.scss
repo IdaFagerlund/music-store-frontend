@@ -1,7 +1,22 @@
-@import "../../scss/global/Colors";
+@import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductInfoCard {
-    background-color: grey;
-    padding: 4em;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+   
+
+
+    background-color: goldenrod;
+    padding: 15px;
+    //padding: 12em 0;
+    //padding: 4em;
+
+    .ViewProductDetailsButton {
+        padding: 1em;
+        background-color: grey;
+        margin-left: 9em;
+    }
+    
 }

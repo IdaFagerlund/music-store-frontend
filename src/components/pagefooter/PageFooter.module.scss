@@ -1,8 +1,8 @@
-@import "../scss/global/Colors";
+@import "../scss/global/ColorVariables";
 @import "../scss/global/ScreenSizeResponsivenessVariables";
 
 .PageFooter {
-	background-color: $dark-grey;
+	background-color: $grey4;
 	padding: 1em;
 	color: $white;
 	text-align: center;

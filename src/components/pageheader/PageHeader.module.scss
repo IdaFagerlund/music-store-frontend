@@ -1,8 +1,8 @@
-@import "../scss/global/Colors";
+@import "../scss/global/ColorVariables";
 @import "../scss/global/ScreenSizeResponsivenessVariables";
 
 .PageHeader {
-	background-color: $dark-grey;
+	background-color: $grey4;
 	color: $white;
 
 	.TopHeader {
@@ -81,7 +81,7 @@
 				}
 
 				&:hover {
-					background-color: $blue-hover;
+					background-color: darken($blue, $percent-darker-at-hover);
 					cursor: pointer;
 				}
 			}

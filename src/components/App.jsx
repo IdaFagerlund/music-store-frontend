@@ -1,14 +1,23 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Route, Switch, Redirect } from "react-router-dom"
 import "./scss/global/GlobalStyles.scss"
+import { useDispatch } from "react-redux"
 import Header from "./pageheader/PageHeader"
 import Footer from "./pagefooter/PageFooter"
 import AboutPage from "./pages/aboutpage/AboutPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
+import { fetchProducts } from "../redux/actions/app/products"
 
 export default function App() {
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		console.log("asdasd")
+		dispatch(fetchProducts())
+	}, [])
+
 	return (
 		<div>
 			<Router>

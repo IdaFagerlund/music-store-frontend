@@ -1,4 +1,4 @@
-@import "../scss/global/Colors";
+@import "../scss/global/ColorVariables";
 @import "../scss/global/ScreenSizeResponsivenessVariables";
 
 .ShoppingCartIconAndName {
@@ -11,7 +11,7 @@
     }
 
     &:hover {
-        background-color: $blue-hover;
+        background-color: darken($blue, $percent-darker-at-hover);
         cursor: pointer;
     }
 		
