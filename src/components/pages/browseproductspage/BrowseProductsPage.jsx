@@ -9,14 +9,20 @@ import ProductFilter from "./ProductFilter"
 export default function BrowseProductsPage() {
     const products = useSelector((state) => state.products)
 
+
+
+
     const ProductList = () => {
         const productInfoCards = products.data.map(product =>
             <ProductInfoCard key={product.id} product={product} />
         )
-
+        const fakeProductInfoCardsToFillInTheRemainingXElementsOnTheLastRowWithToKeepThingsAligned = [...Array(10).keys()].map(fillerInfoCard =>
+            <div className={styles.FakeProductInfoCard} key={fillerInfoCard} />
+        )
         return (
             <div className={styles.ProductList}>
                 {productInfoCards}
+                {fakeProductInfoCardsToFillInTheRemainingXElementsOnTheLastRowWithToKeepThingsAligned}
             </div>
         )
     }
@@ -32,9 +38,9 @@ export default function BrowseProductsPage() {
     //     )
     // }
 
-    const SortByDropdownMenu = () => {
+    const ProductSortMenu = () => {
         return (
-            <div className={styles.SortByDropdownMeny}>
+            <div className={styles.ProductSortMenu}>
                 dropdown
             </div>
         )
@@ -43,11 +49,9 @@ export default function BrowseProductsPage() {
     return (
         <div className={styles.BrowseProductsPage}>
             <ProductCategories />
-            <div className={styles.PageBody}>
-                <div className={styles.ProductFilterComponent}><ProductFilter /></div>
-                <SortByDropdownMenu />
-                <ProductList />
-            </div>
+            <div className={styles.ProductFilterComponent}><ProductFilter /></div>
+            <ProductSortMenu />
+            <ProductList />
 
 
 
@@ -69,7 +73,5 @@ export default function BrowseProductsPage() {
         </div>
     )
 
-    function asd() {
-        return (<div></div>)
-    }
+
 }

@@ -2,21 +2,27 @@
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductInfoCard {
+
+    background-color: rgb(206, 206, 206);
+    padding: 18px;
+    // total px = image width + padding on each side
+    width: 256px + 18px + 18px;
+
     // display: flex;
     // flex-direction: column;
     // align-items: center;
    
 
 
-    background-color: goldenrod;
-    padding: 15px;
-    //padding: 12em 0;
-    //padding: 4em;
+    // background-color: goldenrod;
+    // padding: 15px;
+    // //padding: 12em 0;
+    // //padding: 4em;
 
-    .ViewProductDetailsButton {
-        padding: 1em;
-        background-color: grey;
-        margin-left: 9em;
-    }
+    // .ViewProductDetailsButton {
+    //     padding: 1em;
+    //     background-color: grey;
+    //     margin-left: 9em;
+    // }
     
 }
