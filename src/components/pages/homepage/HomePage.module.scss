@@ -1,7 +1,7 @@
 @import "../../scss/global/Colors";
-@import "../../scss/global/Variables";
+@import "../../scss/global/ScreenSizeResponsivenessVariables";
 
-.Home {
+.HomePage {
 
     .HomePageImage {
         position: relative;
@@ -71,58 +71,15 @@
         }
 	}
 
+    .FeaturedProductsSlideShow {
+        background-color: grey;
+    }
     
 
 }
 
 // .Home {
-//     //background-color: rgb(179, 179, 179);
-//     //padding: 20em;
-
-//     img {
-//         width: 100%;
-//         min-height: 20em;
-//         max-height: 40em;
-//         opacity: 45%;
-//     }
-
-//         position: relative;
-//     >div:nth-child(2) {
-//         position: absolute;
-//         top: 2.5em;
-//         left: 20em;
-
-//         >div:nth-child(2) {
-//             padding: 1em;
-//             background-color: rgb(218, 174, 107);
-//             width: 30%;
-//             margin-top: 1em;
-
-//         }
-
-//         >div:nth-child(3) {
-//             position: absolute;
-//             top: 4.8em;
-//             left: 35em;
-         
-//             width: 100%;
-//         }
-
-        
-//     }
-//     p {
-        
-//         font-size: 45px;
-//         font-style: italic;
     
-        
-//         line-height: 1.8em;
-//     }
-
-
-
-
-
 
 
 //     .Body {

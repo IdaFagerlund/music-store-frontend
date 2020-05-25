@@ -1,11 +1,11 @@
 import React from "react"
-import styles from "./Home.module.scss"
+import styles from "./HomePage.module.scss"
 import Piano from "../../../assets/piano.png"
 import { useHistory } from "react-router-dom"
 import { ArrowRightIcon, ArrowLeftIcon } from "../../utils/Icons"
 
 
-export default function Home() {
+export default function HomePage() {
     const history = useHistory()
 
     const HomePageImage = () => {
@@ -23,12 +23,29 @@ export default function Home() {
         )
     }
 
+    const FeaturedProductsSlideShow = () => {
+        let featuredProducts = [{ "name": "1" }, { "name": "2" }, { "name": "3" }, { "name": "4" }, { "name": "5" }]
+
+        return (
+            <div className={styles.FeaturedProductsSlideShow}>
+                {featuredProducts.map((product) => {
+                    return (
+                        <div>{product.name}</div>
+                    )
+                })}
+            </div>
+        )
+    }
+
     return (
-        <div className={styles.Home}>
+        <div className={styles.HomePage}>
             <HomePageImage />
+            <FeaturedProductsSlideShow />
+        </div>
+    )
+}
 
-
-            {/* <div className={styles.Body}>
+{/* <div className={styles.FeaturedProductsSlideShow}>
                 <h3>Featured</h3>
                 <div className={styles.Featured}>
                     <div className={styles.Arrow}></div>
@@ -40,6 +57,3 @@ export default function Home() {
 
 
             </div> */}
-        </div>
-    )
-}
