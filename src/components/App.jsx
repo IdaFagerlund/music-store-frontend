@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router } from "react-router-dom"
-import { Route, Switch, Redirect } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import "./scss/global/GlobalStyles.scss"
 import { useDispatch } from "react-redux"
 import Header from "./pageheader/PageHeader"

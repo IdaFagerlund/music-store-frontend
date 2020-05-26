@@ -2,13 +2,45 @@
 @import "../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductSearch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $black;
 
-    input {
+    .MagnifyingGlassIconContainer {
+        background-color: $white;
+        border-radius: 1em 0 0 1em;
+        padding: 0.2em 0.1em 0 0.3em;
+    }
+    .MagnifyingGlassIconContainerDuringSearch {
+        border-radius: 0.7em 0 0 0;
+    }
+
+    .SearchInput {
         border: none;
         outline: none;
-        border-radius: 1em;
+        border-radius: 0 1em 1em 0;
         padding: 0.2em 0 0.2em 0.4em;
         width: 26em;
     }
+    .SearchInputDuringSearch {
+        border-radius: 0 0.8em 0 0;
+    }
 
+    .SearchResults {
+        position: absolute;
+        z-index: 1;
+        border-radius: 0 0 1em 1em;
+        padding: 5em 9.5em;
+        background-color: $white;
+        top: 1.4em;
+        left: 0;
+
+    }
+
+    @media screen and (max-width: $responsive-size-small) {
+		.SearchResults {
+            top: 1.3em;
+        }
+	}
 }

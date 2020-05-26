@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import styles from "./BrowseProductsPage.module.scss"
 import ProductInfoCard from "./ProductInfoCard"
 import ProductCategories from "./ProductCategories"
-import ProductFilter from "./ProductFilter"
 
 
 export default function BrowseProductsPage() {
@@ -38,19 +37,26 @@ export default function BrowseProductsPage() {
     //     )
     // }
 
-    const ProductSortMenu = () => {
+    const ProductSortMenu = () => { //mount and unmount to detect outside click. create reusable component and use this in search and login too
         return (
-            <div className={styles.ProductSortMenu}>
-                dropdown
-            </div>
+            <select className={styles.SelectSortBy}>
+                <option>Sort by popularity</option>
+                <option>Sort by price (lowest)</option>
+                <option>Sort by price (highest)</option>
+                <option>Sort by alphabetical order</option>
+            </select>
+
+            // <div className={styles.ProductSortMenu}>
+            //     Sort by popularity
+            // </div>
         )
     }
 
     return (
         <div className={styles.BrowseProductsPage}>
             <ProductCategories />
-            <div className={styles.ProductFilterComponent}><ProductFilter /></div>
-            <ProductSortMenu />
+            {/* <div className={styles.ProductFilterComponent}><ProductFilter /></div> */}
+            <div className={styles.ProductSortMenuComponent}><ProductSortMenu /></div>
             <ProductList />
 
 
