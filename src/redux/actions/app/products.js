@@ -12,11 +12,24 @@ export const fetchProducts = () => {
                     type: "FETCH_PRODUCTS_SUCCESS",
                     payload: mockProductsData
                 })
+                dispatch({
+                    type: "SORT_PRODUCTS",
+                    payload: { sortParameter: "averageReviewStars", doReverseSort: true }
+                })
             })
             .catch((error) => {
                 dispatch({
                     type: "FETCH_PRODUCTS_FAILURE"
                 })
             })
+    }
+}
+
+export const sortProducts = ({ sortParameter, doReverseSort }) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SORT_PRODUCTS",
+            payload: { sortParameter, doReverseSort }
+        })
     }
 }

@@ -29,62 +29,68 @@ export const mockProductsData = [
         "isFeatured": false,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 2,
-        "name": "the product name",
+        "name": "abc",
         "description": "this is a description",
-        "averageReviewStars": 4,
+        "averageReviewStars": 3,
         "stock": 20,
         "isFeatured": false,
-        "price": 75.50,
+        "price": 755.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}, {}, {}]
     },
     {
         "id": 3,
         "name": "the product name",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d jk hkj kjh kjkjh jkh kjhjkh kjhjk jkhjk hjk kjhk hjh kjhkjh kjhjk hjkhkj jkhjk hjkh kjh kjh kjhkjh kjh jk hkjh kjhjk jkh kjhjkh jkhjk hjkas d ",
-        "averageReviewStars": 4,
+        "averageReviewStars": 1,
         "stock": 20,
         "isFeatured": false,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 4,
         "name": "the product name",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
-        "averageReviewStars": 4,
+        "averageReviewStars": 0,
         "stock": 20,
         "isFeatured": false,
-        "price": 75.50,
+        "price": 7555.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}, {}, {}, {}, {}]
     },
     {
         "id": 5,
-        "name": "the product name",
+        "name": "wow",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
         "averageReviewStars": 4,
         "stock": 20,
         "isFeatured": false,
-        "price": 75.50,
+        "price": 755.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 6,
         "name": "the product name",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
-        "averageReviewStars": 4,
+        "averageReviewStars": 5,
         "stock": 20,
         "isFeatured": false,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": []
     },
     {
         "id": 7,
@@ -95,40 +101,44 @@ export const mockProductsData = [
         "isFeatured": true,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 8,
-        "name": "the product name",
+        "name": "superguitar",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
-        "averageReviewStars": 4,
+        "averageReviewStars": 5,
         "stock": 20,
         "isFeatured": true,
-        "price": 75.50,
+        "price": 755.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}]
     },
     {
         "id": 9,
         "name": "the product name",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
-        "averageReviewStars": 4,
+        "averageReviewStars": 2,
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 10,
-        "name": "the product name",
+        "name": "naaame",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
         "averageReviewStars": 4,
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     },
     {
         "id": 111,
@@ -139,6 +149,7 @@ export const mockProductsData = [
         "isFeatured": true,
         "price": 75.50,
         "category": "Guitar",
-        "subcategory": "Electric"
+        "subcategory": "Electric",
+        "reviews": [{}, {}]
     }
 ]

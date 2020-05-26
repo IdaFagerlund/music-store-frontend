@@ -63,9 +63,19 @@
 
     }
 
-    .Stars {
-        >* {
-            margin: 0.4em 0.4em 0.4em 0;
+    .Rating {
+        display: flex;
+        align-items: center;
+
+        p {
+            padding: 0 0 0.2em 0.2em;
+            font-size: 14px;
+        }
+
+        .Stars {
+            >* {
+                margin: 0.4em 0.4em 0.4em 0;
+            }
         }
     }
 
