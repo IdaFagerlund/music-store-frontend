@@ -7,13 +7,13 @@ import Footer from "./pagefooter/PageFooter"
 import AboutPage from "./pages/aboutpage/AboutPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
+import ProductDetailsPage from "./pages/productdetailspage/ProductDetailsPage"
 import { fetchProducts } from "../redux/actions/app/products"
 
 export default function App() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		console.log("asdasd")
 		dispatch(fetchProducts())
 	}, [])
 
@@ -23,6 +23,7 @@ export default function App() {
 				<Header />
 				<Switch>
 					<Route path="/product-browse" exact component={BrowseProductsPage}></Route>
+					<Route path="/product/" component={ProductDetailsPage}></Route>
 					<Route path="/about" exact component={AboutPage}></Route>
 					<Route path="/" exact component={HomePage}></Route>
 					<Route path="*" component={HomePage}>

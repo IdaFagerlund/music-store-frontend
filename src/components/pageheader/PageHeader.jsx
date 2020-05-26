@@ -3,7 +3,6 @@ import styles from "./PageHeader.module.scss"
 import MusicStoreLogo from "../../assets/MusicStoreLogo.png"
 import { useHistory } from "react-router-dom"
 import { UserIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "../utils/Icons"
-import { NavLink } from "react-router-dom"
 import ProductSearch from "./ProductSearch"
 
 export default function PageHeader() {
@@ -17,7 +16,7 @@ export default function PageHeader() {
 				<img src={MusicStoreLogo} alt="MusicStoreLogo" width="320" />
 				<hr />
 				<ul className={styles.NavigationMenu}>
-					<li onClick={() => history.push("/")}><p>Home</p><NavLink to="/"></NavLink></li>
+					<li onClick={() => history.push("/")}><p>Home</p></li>
 					<li onClick={() => history.push("/product-browse")}><p>Browse products</p></li>
 					<li onClick={() => history.push("/about")}><p>About</p></li>
 				</ul>
