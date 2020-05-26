@@ -27,7 +27,7 @@ export default function SortByDropdownMenu() {
         <div className={styles.SortByDropdownMenu} ref={parentContainerReference}>
             <div className={styles.ChosenSortByCategory} onClick={() => setIsShowingDropdownList(!isShowingDropdownList)}>
                 <p>{`Sort by ${chosenSortByCategory}`}</p>
-                {isShowingDropdownList ? <ArrowUpIcon size={15} color="000000" /> : <ArrowDownIcon size={15} color="000000" />}
+                {isShowingDropdownList ? <ArrowUpIcon size={15} color="#000000" /> : <ArrowDownIcon size={15} color="#000000" />}
             </div>
             <ContainerThatDisappearOnOutsideClick
                 containerContent={<SortByDropdownList />}

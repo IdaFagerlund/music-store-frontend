@@ -19,7 +19,10 @@ export default function ProductCategories() {
         )
         return (
             <div className={styles.MainCategories}>
-                <ul>{mainCategories}</ul>
+                <ul>
+                    <li>All</li>
+                    {mainCategories}
+                </ul>
             </div>
         )
     }
@@ -30,7 +33,7 @@ export default function ProductCategories() {
         )
         return (
             <div className={styles.SubCategories}>
-                <ul>{subCategories}</ul>
+                <ul> {subCategories} </ul>
             </div>
         )
     }

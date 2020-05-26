@@ -21,16 +21,16 @@
 
     h1 {
         font-style: italic;
+        margin-bottom: 0.15em;
     }
 
     .BottomRow {
-        display: flex;
         position: absolute;
-        bottom: 18px;
-        right: 18px;
-        
-        
+            bottom: 18px;
+            right: 18px;
+            display: flex;
     }
+
 
     .AddToShoppingCartButton {
         background-color: $green;
@@ -63,23 +63,10 @@
 
     }
 
-    
+    .Stars {
+        >* {
+            margin: 0.4em 0.4em 0.4em 0;
+        }
+    }
 
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-   
-
-
-    // background-color: goldenrod;
-    // padding: 15px;
-    // //padding: 12em 0;
-    // //padding: 4em;
-
-    // .ViewProductDetailsButton {
-    //     padding: 1em;
-    //     background-color: grey;
-    //     margin-left: 9em;
-    // }
-    
 }

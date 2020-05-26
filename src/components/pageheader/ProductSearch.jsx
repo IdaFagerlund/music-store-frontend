@@ -8,14 +8,11 @@ export default function ProductSearch() {
     const [searchText, setSearchText] = useState("")
     const parentContainerReference = useRef()
 
-
-
     const SearchResults = () => {
         return (
             <div className={styles.SearchResults}>hellooooo</div>
         )
     }
-
 
     return (
         <div className={styles.ProductSearch} ref={parentContainerReference}>
@@ -24,7 +21,4 @@ export default function ProductSearch() {
             <ContainerThatDisappearOnOutsideClick containerContent={<SearchResults />} openContainerCondition={searchText} onContainerClose={() => setSearchText("")} parentContainerReference={parentContainerReference} />
         </div>
     )
-
-    //ContainerThatDisappearOnOutsideClick
-
 }
