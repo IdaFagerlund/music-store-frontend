@@ -18,9 +18,6 @@ export default function ContainerThatDisappearOnOutsideClick({ containerContent,
         if (openContainerCondition) {
             document.addEventListener("mousedown", handleClickOutside)
         }
-        else {
-            document.removeEventListener("mousedown", handleClickOutside)
-        }
         return () => {
             document.removeEventListener("mousedown", handleClickOutside)
         }
