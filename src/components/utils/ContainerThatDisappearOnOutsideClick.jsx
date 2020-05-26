@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from "react"
 
-
-export default function ContainerThatDisappearOnOutsideClick({ containerContent, openContainerCondition, onContainerClose }) {
+// Used for all the dropdown menus as well as the modals were clicking outside of the container should close it.
+export default function ContainerThatDisappearOnOutsideClick({ containerContent, openContainerCondition, onContainerClose, parentContainerReference }) {
     const reference = useRef()
 
     const handleClickOutside = (event) => {
-        if (reference.current.contains(event.target)) {
+        const isClickInsideThisComponent = reference.current.contains(event.target)
+        const isClickInsideParentComponent = parentContainerReference ? parentContainerReference.current.contains(event.target) : false
+
+        if (isClickInsideThisComponent || isClickInsideParentComponent) {
             return;
         }
         onContainerClose()
@@ -22,6 +25,7 @@ export default function ContainerThatDisappearOnOutsideClick({ containerContent,
             document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [openContainerCondition])
+
 
     return (
         <div ref={reference}>
