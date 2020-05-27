@@ -102,7 +102,7 @@ export const ArrowUpIcon = ({ color = "#ffffff", size = 40 }) => {
 export const StarIcon = ({ color = "#E0E0E0", edgeColor = "#606060", size = 25 }) => {
 	return (
 		<svg width={size} height={size} viewBox="0 0 1280.000000 1222.000000" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(0.000000,1222.000000) scale(0.100000,-0.100000)" fill={color} stroke={edgeColor} stroke-width="6%">
+			<g transform="translate(0.000000,1222.000000) scale(0.100000,-0.100000)" fill={color} stroke={edgeColor} strokeWidth="6%">
 				<path d="M6273 12205 c-115 -32 -205 -96 -266 -187 -19 -29 -304 -602 -635 -1273 -330 -671 -719 -1461 -864 -1755 l-264 -535 -220 -32 c-3672 -539 -3667
 				-538 -3722 -557 -100 -35 -199 -123 -248 -219 -76 -148 -69 -309 18 -454 23 -37 448 -457 1450 -1430 1270 -1233 1418 -1380 1413 -1403 -2 -14 -39 -223
 				-80 -465 -42 -242 -111 -645 -155 -895 -43 -250 -124 -718 -180 -1040 -56 -322 -135 -778 -176 -1015 -90 -512 -92 -552 -30 -680 102 -216 358 -320 574

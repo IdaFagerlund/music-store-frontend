@@ -29,11 +29,27 @@
     color: white;
 
     .MainCategories {
-        @include categoriesRowStyle($grey3)
+        @include categoriesRowStyle($grey3);
+
+        .SelectedCategory {
+            background-color: darken($grey3, $percent-darker-at-hover);
+        }
     }
 
     .SubCategories {
-        @include categoriesRowStyle(($grey2))
+        @include categoriesRowStyle(($grey2));
+
+        .SelectedSubCategory {
+            background-color: darken($grey2, $percent-darker-at-hover);
+        }
+
+        .EmptySubCategories {
+            color: $grey2;
+            li:hover {
+                background-color: $grey2;
+                cursor: default;
+            }
+        }
     }
 
 }

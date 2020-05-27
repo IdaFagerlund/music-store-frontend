@@ -8,7 +8,7 @@ import AboutPage from "./pages/aboutpage/AboutPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
 import ProductDetailsPage from "./pages/productdetailspage/ProductDetailsPage"
-import { fetchProducts } from "../redux/actions/app/products"
+import { fetchProducts } from "../redux/actions/products"
 
 export default function App() {
 	const dispatch = useDispatch()

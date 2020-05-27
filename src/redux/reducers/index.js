@@ -1,10 +1,10 @@
 import { combineReducers } from "redux"
-import testreducer from "./test/testreducer"
+import productsortandfilterselections from "./productsortandfilterselections"
 import productCategories from "./productcategories"
 import products from "./products"
 
 export default combineReducers({
-	testreducer,
+	products,
 	productCategories,
-	products
+	productsortandfilterselections
 })

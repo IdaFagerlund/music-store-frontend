@@ -1,2 +1,1 @@
-export * from "./test/testactions"
-export * from "./productpage/productcategories"
+export * from "./products"

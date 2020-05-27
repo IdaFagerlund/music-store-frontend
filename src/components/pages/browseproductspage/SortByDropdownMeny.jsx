@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from "react"
 import styles from "./SortByDropdownMenu.module.scss"
 import { ArrowDownIcon, ArrowUpIcon } from "../../utils/Icons"
 import ContainerThatDisappearOnOutsideClick from "../../utils/ContainerThatDisappearOnOutsideClick"
-import { useDispatch } from "react-redux"
-import { sortProducts } from "../../../redux/actions/app/products"
-
+import { useDispatch, useSelector } from "react-redux"
+import { sortProducts } from "../../../redux/actions/products"
+import { updateSortAndFilterSelections } from "../../../redux/actions/products"
 
 export default function SortByDropdownMenu() {
     const sortByCategoryOptions = [
@@ -13,23 +13,23 @@ export default function SortByDropdownMenu() {
         { categoryOption: "price (highest)", sortParameter: "price", doReverseSort: true },
         { categoryOption: "alphabetical order", sortParameter: "name", doReverseSort: false },
     ]
-    const [chosenSortByOption, setChosenSortByOption] = useState(sortByCategoryOptions[0])
+    //const [chosenSortByOption, setChosenSortByOption] = useState(sortByCategoryOptions[0])
     const [isShowingDropdownList, setIsShowingDropdownList] = useState(false)
+    const sortSelection = useSelector((state) => state.productsortandfilterselections.currentSelections)
     const parentContainerReference = useRef()
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(sortProducts({ sortParameter: chosenSortByOption.sortParameter, doReverseSort: chosenSortByOption.doReverseSort }))
-    }, [])
+        dispatch(sortProducts({ sortParameter: sortSelection.sortParameter, doReverseSort: sortSelection.doReverseSort }))
+    }, [sortSelection])
 
     const SortByDropdownList = () => {
         return (
             <div className={styles.SortByDropdownList}>
                 {sortByCategoryOptions.map(option =>
                     <div className={styles.ListItem} onClick={() => {
-                        setChosenSortByOption(option)
+                        dispatch(updateSortAndFilterSelections({ sortParameter: option.sortParameter, doReverseSort: option.doReverseSort }))
                         setIsShowingDropdownList(false)
-                        dispatch(sortProducts({ sortParameter: option.sortParameter, doReverseSort: option.doReverseSort }))
                     }}>{`Sort by ${option.categoryOption}`}</div>
                 )}
             </div>
@@ -39,7 +39,7 @@ export default function SortByDropdownMenu() {
     return (
         <div className={styles.SortByDropdownMenu} ref={parentContainerReference}>
             <div className={styles.ChosenSortByCategory} onClick={() => setIsShowingDropdownList(!isShowingDropdownList)}>
-                <p>{`Sort by ${chosenSortByOption.categoryOption}`}</p>
+                <p>{`Sort by ${sortByCategoryOptions.find(s => s.sortParameter === sortSelection.sortParameter).categoryOption}`}</p>
                 {isShowingDropdownList ? <ArrowUpIcon size={15} color="#000000" /> : <ArrowDownIcon size={15} color="#000000" />}
             </div>
             <ContainerThatDisappearOnOutsideClick

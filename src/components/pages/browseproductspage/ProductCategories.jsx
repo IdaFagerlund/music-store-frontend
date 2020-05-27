@@ -1,13 +1,15 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "./ProductCategories.module.scss"
 import { useSelector, useDispatch } from "react-redux"
-import { fetchProductCategories } from "../../../redux/actions/productpage/productcategories"
+import { fetchProductCategories, updateSortAndFilterSelections } from "../../../redux/actions/products"
+import productcategories from "../../../redux/reducers/productcategories"
 
 
 export default function ProductCategories() {
     const productCategories = useSelector((state) => state.productCategories)
-    const selectedMainCategory = productCategories.data[0]
+    const filterSelections = useSelector((state) => state.productsortandfilterselections.currentSelections)
     const dispatch = useDispatch()
+
 
     useEffect(() => {
         dispatch(fetchProductCategories())
@@ -15,12 +17,14 @@ export default function ProductCategories() {
 
     const MainCategories = () => {
         const mainCategories = productCategories.data.map(productCategory =>
-            <li key={productCategory.mainCategory}>{productCategory.mainCategory}</li>
+            <li key={productCategory.mainCategory} className={productCategory.mainCategory === filterSelections.mainCategory ? styles.SelectedCategory : undefined}
+                onClick={() => dispatch(updateSortAndFilterSelections({ mainCategory: productCategory.mainCategory, subCategory: null }))}>
+                {productCategory.mainCategory}
+            </li>
         )
         return (
             <div className={styles.MainCategories}>
                 <ul>
-                    <li>All</li>
                     {mainCategories}
                 </ul>
             </div>
@@ -28,12 +32,18 @@ export default function ProductCategories() {
     }
 
     const SubCategories = () => {
-        const subCategories = selectedMainCategory && selectedMainCategory.subCategories.map(subCategory =>
-            <li key={subCategory}>{subCategory}</li>
+        const currentCategory = productCategories.data.find(productCategory => productCategory.mainCategory === filterSelections.mainCategory)
+        const currentSubCategories = currentCategory ? currentCategory.subCategories : []
+
+        const subCategories = currentSubCategories.map(subCategory =>
+            <li key={subCategory} className={subCategory === filterSelections.subCategory && styles.SelectedSubCategory}
+                onClick={() => dispatch(updateSortAndFilterSelections({ subCategory: subCategory }))}>
+                {subCategory}
+            </li>
         )
         return (
             <div className={styles.SubCategories}>
-                <ul> {subCategories} </ul>
+                {subCategories.length !== 0 ? <ul> {subCategories} </ul> : <ul className={styles.EmptySubCategories}><li>.</li></ul>}
             </div>
         )
     }

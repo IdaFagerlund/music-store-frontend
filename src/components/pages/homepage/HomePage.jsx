@@ -28,11 +28,11 @@ export default function HomePage() {
 
         return (
             <div className={styles.FeaturedProductsSlideShow}>
-                {featuredProducts.map((product) => {
+                {/* {featuredProducts.map((product) => {
                     return (
                         <div>{product.name}</div>
                     )
-                })}
+                })} */}
             </div>
         )
     }
@@ -44,16 +44,3 @@ export default function HomePage() {
         </div>
     )
 }
-
-{/* <div className={styles.FeaturedProductsSlideShow}>
-                <h3>Featured</h3>
-                <div className={styles.Featured}>
-                    <div className={styles.Arrow}></div>
-                    <div className={styles.Item}></div>
-                    <div className={styles.Item}></div>
-                    <div className={styles.Item}></div>
-                    <div className={styles.Arrow}></div>
-                </div>
-
-
-            </div> */}

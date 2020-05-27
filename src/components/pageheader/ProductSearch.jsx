@@ -14,22 +14,31 @@ export default function ProductSearch() {
     const history = useHistory()
 
     const SearchResults = () => {
-        const searchResults = products.data.map(product =>
-            <div className={styles.SearchResult} key={product.id} onClick={() => {
-                history.push(`/product/${product.id}`)
-                setSearchText("")
-            }}>
-                <div className={styles.ImageAndNameContainer}>
-                    <img src={ElectricGuitarImage} width={64} height={64} alt="image" />
-                    <p>{product.name}</p>
+        const filteredResults = products.data.filter(product => product.name.includes(searchText))
+        const maxAmountOfResultsToShow = 7
+
+        const searchResults = filteredResults.slice(0, maxAmountOfResultsToShow).map(product => {
+            const highlightedProductName = [
+                product.name.substring(0, product.name.indexOf(searchText)),
+                searchText,
+                product.name.substring(product.name.indexOf(searchText) + searchText.length, product.name.length)
+            ]
+
+            return (
+                <div className={styles.SearchResult} key={product.id} onClick={() => { history.push(`/product/${product.id}`); setSearchText("") }}>
+                    <div className={styles.ImageAndNameContainer}>
+                        <img src={ElectricGuitarImage} width={64} height={64} alt="image" />
+                        <p>{highlightedProductName[0]}</p><p><b>{highlightedProductName[1]}</b></p><p>{highlightedProductName[2]}</p>
+                    </div>
+                    <ArrowRightIcon size={20} color={"#808080"} />
                 </div>
-                <ArrowRightIcon size={20} color={"#808080"} />
-            </div>
-        )
+            )
+        })
 
         return (
             <div className={styles.SearchResults}>
                 {searchResults}
+                <div style={{ padding: "0.65em" }}></div>
             </div>
         )
     }

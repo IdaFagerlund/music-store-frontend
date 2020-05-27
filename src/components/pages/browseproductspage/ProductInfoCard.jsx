@@ -17,7 +17,7 @@ export default function ProductInfoCard({ product }) {
     const Stars = () => {
         let stars = []
         for (let i = 1; i <= 5; i++) {
-            stars.push(<StarIcon color={i <= product.averageReviewStars ? "#FFFA3F" : "#E0E0E0"} />)
+            stars.push(<StarIcon key={i} color={i <= product.averageReviewStars ? "#FFFA3F" : "#E0E0E0"} />)
         }
         return <div className={styles.Stars}>{stars}</div>
     }

@@ -4,3 +4,10 @@
 	box-sizing: border-box;
 	font-family: "Times New Roman", Times, serif;
 }
+
+
+// To be able to keep the footer at the bottom of the page
+html {
+	position: relative;
+	min-height: 100%;
+}

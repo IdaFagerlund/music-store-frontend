@@ -2,6 +2,10 @@
 
 export const mockProductCategoriesData = [
     {
+        "mainCategory": "All",
+        "subCategories": []
+    },
+    {
         "mainCategory": "Guitars",
         "subCategories": ["Electric", "Acoustic"]
     },
@@ -28,8 +32,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
@@ -40,8 +44,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 755.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}, {}, {}]
     },
     {
@@ -52,8 +56,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
@@ -64,8 +68,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 7555.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}, {}, {}, {}, {}]
     },
     {
@@ -76,8 +80,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 755.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
@@ -88,8 +92,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": false,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": []
     },
     {
@@ -100,8 +104,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
@@ -112,8 +116,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": true,
         "price": 755.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}]
     },
     {
@@ -124,8 +128,8 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
@@ -136,20 +140,94 @@ export const mockProductsData = [
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
     },
     {
-        "id": 111,
+        "id": 11,
         "name": "the product name",
         "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
         "averageReviewStars": 4,
         "stock": 20,
         "isFeatured": true,
         "price": 75.50,
-        "category": "Guitar",
-        "subcategory": "Electric",
+        "category": "Guitars",
+        "subCategory": "Electric",
         "reviews": [{}, {}]
-    }
+    },
+    {
+        "id": 11123,
+        "name": "the product name",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Guitars",
+        "subCategory": "Electric",
+        "reviews": [{}, {}]
+    },
+
+
+    {
+        "id": 12,
+        "name": "acoustic guitar",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Guitars",
+        "subCategory": "Acoustic",
+        "reviews": [{}, {}]
+    },
+    {
+        "id": 13,
+        "name": "grand piano",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Pianos",
+        "subCategory": "Grand pianos",
+        "reviews": [{}, {}]
+    },
+    {
+        "id": 14,
+        "name": "keyboard",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Pianos",
+        "subCategory": "Keyboards",
+        "reviews": [{}, {}]
+    },
+    {
+        "id": 15,
+        "name": "drums",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Drums",
+        "subCategory": null,
+        "reviews": [{}, {}]
+    },
+    {
+        "id": 16,
+        "name": "other",
+        "description": "this is a description and it may be very long asd asd as d as da sd a s da sd  asdddddddasd sdaaaaaaaaaaaaaaaaaaa asd a sd as d as d as d as d as d as d asd  asd a sd as d as d as d as d as da sd as d as d ",
+        "averageReviewStars": 4,
+        "stock": 20,
+        "isFeatured": true,
+        "price": 75.50,
+        "category": "Other",
+        "subCategory": null,
+        "reviews": [{}, {}]
+    },
 ]
