@@ -20,7 +20,7 @@
         border: none;
         outline: none;
         border-radius: 0 1em 1em 0;
-        padding: 0.2em 0 0.2em 0.4em;
+        padding: 0.21em 0 0.21em 0.4em;
         width: 26em;
     }
     .SearchInputDuringSearch {
@@ -36,6 +36,8 @@
         top: 1.4em;
         left: 0;  
         box-shadow: 2px 6px 7px 0px rgba(50, 50, 50, 0.23);
+        -moz-box-shadow: 2px 6px 7px 0px rgba(50, 50, 50, 0.23);
+        -webkit-box-shadow: 2px 6px 7px 0px rgba(50, 50, 50, 0.23);
 
         .SearchResult {
             padding: 1em 1.3em;

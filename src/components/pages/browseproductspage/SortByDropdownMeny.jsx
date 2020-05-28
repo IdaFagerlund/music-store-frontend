@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react"
 import styles from "./SortByDropdownMenu.module.scss"
 import { ArrowDownIcon, ArrowUpIcon } from "../../utils/Icons"
-import ContainerThatDisappearOnOutsideClick from "../../utils/ContainerThatDisappearOnOutsideClick"
+import ContainerThatDisappearOnOutsideClickForClickComponent from "../../utils/ContainerThatCloseOnOutsideClick"
 import { useDispatch, useSelector } from "react-redux"
 import { sortProducts } from "../../../redux/actions/products"
 import { updateSortAndFilterSelections } from "../../../redux/actions/products"
+import ContainerThatCloseOnOutsideClickForClickComponent from "../../utils/ContainerThatCloseOnOutsideClick"
 
 export default function SortByDropdownMenu() {
     const sortByCategoryOptions = [
@@ -13,7 +14,6 @@ export default function SortByDropdownMenu() {
         { categoryOption: "price (highest)", sortParameter: "price", doReverseSort: true },
         { categoryOption: "alphabetical order", sortParameter: "name", doReverseSort: false },
     ]
-    //const [chosenSortByOption, setChosenSortByOption] = useState(sortByCategoryOptions[0])
     const [isShowingDropdownList, setIsShowingDropdownList] = useState(false)
     const sortSelection = useSelector((state) => state.productsortandfilterselections.currentSelections)
     const parentContainerReference = useRef()
@@ -26,7 +26,7 @@ export default function SortByDropdownMenu() {
     const SortByDropdownList = () => {
         return (
             <div className={styles.SortByDropdownList}>
-                {sortByCategoryOptions.map(option =>
+                {isShowingDropdownList && sortByCategoryOptions.map(option =>
                     <div className={styles.ListItem} onClick={() => {
                         dispatch(updateSortAndFilterSelections({ sortParameter: option.sortParameter, doReverseSort: option.doReverseSort }))
                         setIsShowingDropdownList(false)
@@ -36,17 +36,21 @@ export default function SortByDropdownMenu() {
         )
     }
 
-    return (
-        <div className={styles.SortByDropdownMenu} ref={parentContainerReference}>
+    const SortByDropDownButton = () => {
+        return (
             <div className={styles.ChosenSortByCategory} onClick={() => setIsShowingDropdownList(!isShowingDropdownList)}>
                 <p>{`Sort by ${sortByCategoryOptions.find(s => s.sortParameter === sortSelection.sortParameter).categoryOption}`}</p>
                 {isShowingDropdownList ? <ArrowUpIcon size={15} color="#000000" /> : <ArrowDownIcon size={15} color="#000000" />}
             </div>
-            <ContainerThatDisappearOnOutsideClick
-                containerContent={<SortByDropdownList />}
-                openContainerCondition={isShowingDropdownList}
+        )
+    }
+
+    return (
+        <div className={styles.SortByDropdownMenu} ref={parentContainerReference}>
+            <ContainerThatCloseOnOutsideClickForClickComponent
+                clickTriggerComponent={<SortByDropDownButton />}
+                containerContentComponent={<SortByDropdownList />}
                 onContainerClose={() => setIsShowingDropdownList(false)}
-                parentContainerReference={parentContainerReference}
             />
         </div>
     )

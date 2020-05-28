@@ -3,7 +3,7 @@ import styles from "./ShoppingCart.module.scss"
 
 export default function ShoppingCart() {
     return (
-        <div>
+        <div className={styles.ShoppingCart}>
             shopping cart popup
         </div>
     )

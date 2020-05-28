@@ -1,13 +1,20 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import styles from "./PageHeader.module.scss"
 import MusicStoreLogo from "../../assets/MusicStoreLogo.png"
 import { useHistory } from "react-router-dom"
 import { UserIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "../utils/Icons"
 import ProductSearch from "./ProductSearch"
+import UserMenu from "./UserMenu"
+import ShoppingCart from "./ShoppingCart"
+import ContainerThatCloseOnOutsideClickForClickComponent from "../utils/ContainerThatCloseOnOutsideClick"
+
 
 export default function PageHeader() {
 	const history = useHistory()
+	const [isShowingMyPagePopout, setIsShowingMyPagePopout] = useState(false)
+	const [isShowingShoppingCartPopout, setIsShowingShoppingCartPopout] = useState(false)
 
+	const theref = useRef()
 
 	const TopHeader = () => {
 
@@ -24,13 +31,21 @@ export default function PageHeader() {
 		)
 	}
 
+
 	const BottomHeader = () => {
 		return (
 			<div className={styles.BottomHeader}>
 				<ProductSearch />
+
 				<div className={styles.UserAndShoppingCartContainer}>
-					<div><UserIcon /><p>My page</p></div>
-					<div><ShoppingCartIcon /><p>Shopping cart</p></div>
+					<ContainerThatCloseOnOutsideClickForClickComponent
+						clickTriggerComponent={<div className={styles.IconAndText}><UserIcon /><p>My page</p></div>}
+						containerContentComponent={<div className={styles.Popout}><UserMenu /></div>}
+					/>
+					<ContainerThatCloseOnOutsideClickForClickComponent
+						clickTriggerComponent={<div className={styles.IconAndText}><ShoppingCartIcon /><p>Shopping cart</p></div>}
+						containerContentComponent={<div className={styles.Popout}><ShoppingCart /></div>}
+					/>
 				</div>
 			</div>
 		)

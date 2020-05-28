@@ -1,9 +1,9 @@
 import React from "react"
 
-export const UserIcon = ({ color = "#ffffff", size = 20 }) => {
+export const UserIcon = ({ color = "#ffffff", size = 23 }) => {
 	return (
 		<svg width={size} height={size} viewBox="0 0 1280.000000 1231.000000" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(0.000000,1231.000000) scale(0.100000,-0.100000)" fill={color}>
+			<g transform="translate(200.000000,1100.000000) scale(0.080000,-0.080000)" fill={color}>
 				<path d="M6130 12304 c-19 -2 -84 -9 -145 -15 -700 -67 -1430 -353 -2000 -783 -233 -175 -534 -465 -707 -681 -709 -884 -1016 -1994 -857 -3100 136 -946 604
 				-1817 1309 -2438 141 -124 340 -275 478 -365 l93 -60 -53 -12 c-142 -33 -472 -125 -628 -176 -1667 -538 -2896 -1531 -3385 -2733 -150 -369 -235 -788 -235
 				-1161 0 -105 33 -638 46 -737 l5 -43 6349 0 6349 0 5 43 c13 98 46 631 46 732 0 316 -60 668 -167 980 -436 1276 -1666 2326 -3398 2900 -192 64 -561 170
@@ -15,7 +15,7 @@ export const UserIcon = ({ color = "#ffffff", size = 20 }) => {
 	)
 }
 
-export const ShoppingCartIcon = ({ color = "#ffffff", size = 25 }) => {
+export const ShoppingCartIcon = ({ color = "#ffffff", size = 23 }) => {
 	return (
 		<svg width={size} height={size} viewBox="0 0 1280.000000 986.000000" preserveAspectRatio="xMidYMid meet">
 			<g transform="translate(1270.000000,986.000000) scale(-0.100000,-0.100000)" fill={color}>
