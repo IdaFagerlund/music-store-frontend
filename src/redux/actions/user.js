@@ -1,6 +1,8 @@
 import { mockLoginDataUser } from "../mockdata/mockdata.js"
 
-export const login = () => {
+export const login = (fields) => {
+    const payload = { username: fields.username, password: fields.password }
+
     return (dispatch) => {
         dispatch({
             type: "LOGIN_LOADING"
@@ -21,7 +23,7 @@ export const login = () => {
     }
 }
 
-export const register = () => {
+export const register = (fields) => {
     return (dispatch) => {
         dispatch({
             type: "REGISTER_LOADING"

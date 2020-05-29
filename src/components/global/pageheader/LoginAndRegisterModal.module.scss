@@ -1,11 +1,8 @@
 @import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
-.LoginModal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.LoginAndRegisterModal {
+    color: white;
     
     .Header {
         display: flex;
@@ -26,9 +23,9 @@
     }
 
     .Content {
-        background-color: $white;
+        background-color: white;
         color: black;
-        padding: 1.5em 1.8em 4em 1.8em;
+        padding: 1.5em 1.8em 3.3em 1.8em;
 
         .InputContainer {
             padding: 0.5em 0;
@@ -47,12 +44,36 @@
 
             .InputError {
                 color: white;
-                background-color: rgb(235, 102, 102);
+                background-color: $red;
                 margin-top: 0.4em;
                 padding: 0.3em;
                 border-radius: 0.2em;
                 max-width: 20.8em;
             }
+        }
+
+        .DemoInformation {
+            border-radius: 1em;
+            margin-bottom: 1.8em;
+            border: 1px solid $red;
+            padding: 1em;
+            max-width: 33em;
+
+            h2 {
+                padding-bottom: 0.3em;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .Accounts {
+                font-weight: bold;
+                color: $green;
+                font-size: 16px;
+            }
+
+            
         }
     }
 
@@ -64,7 +85,7 @@
         align-items: center;
         justify-content: flex-end;
 
-        .NewUserButton {
+        .SwitchBetweenLoginAndRegisterButton {
             color: rgb(114, 114, 114);
             padding: 0.5em 0.5em;
             
@@ -75,7 +96,7 @@
             }
         }
 
-        .LoginButton {
+        .SubmitButton {
             background-color: $blue3;
             padding: 0.8em 1em;
             margin-left: 0.9em;
@@ -88,5 +109,4 @@
             }
         }
     }
-    
 }

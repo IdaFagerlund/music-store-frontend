@@ -3,10 +3,6 @@
 
 .BrowseProductsPage {
 
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-
     .ProductFilterComponent {
         width: 80%;
         margin: 1em auto 0 auto;
@@ -23,32 +19,17 @@
             outline: none;
             padding: 0.6em 0 0.6em 0.6em;
             font-size: 15px;
-            position: relative;
-
-           
-            
+            position: relative; 
         }
         
         .form-select {
             background-color: red;
             background: red;
         }
-
-        // .ProductSortMenu {
-        //     background-color: rgb(255, 255, 255);
-        //     border: 1px solid black;
-        //     padding: 0.6em 2em;
-
-        //     &:hover {
-        //         cursor: pointer;
-        //     }
-        // }
-
     }
 
     .ProductList {
         width: 80%;
-        //background-color: blue;
         margin-left: auto;
         margin-right: auto;
         padding-top: 4.5em;
@@ -58,125 +39,16 @@
         flex-wrap: wrap;
 
         background-color: $grey1;
-            display: flex;
-            justify-content: center;
-        //justify-content: center;
+        display: flex;
+        justify-content: center;
         flex-wrap: wrap;
 
-        
-
-        // To avoid the last row of items to center (since there may be less elements in the last row than the ones above), fill out some space to the right
-        // &::after {
-        //     content: "";
-        //     width: 252px + 18px + 18px;
-        //     //flex: auto;
-        //     //width: 322px;
-        //     //margin-right: -5em;
-        //     background-color: green;
-        // }
-
         .FakeProductInfoCard {
-            // total px = image width + product card padding on each side
             width: 256px + 18px + 18px;
-          
         }
-        >*{
+
+        >* {
             margin: 15px 15px 15px 15px; 
         }
-
-        
     }
-
-    .Teeest {
-        background-color: green;
-    }
-    
-
-    // .PageBody {
-    //     width: 80%;
-    //     margin-left: auto;
-    //     margin-right: auto;
-    //     //display: flex;
-    //     //flex-direction: column;
-    //     //align-items: center;
-
-
-    //     // .ProductList {
-    //     //     //background-color: red;
-    //     //     display: grid;
-    //     //     // images are 256px + the product info card got 15px padding on each side
-    //     //     grid-template-columns: repeat(1, 256px + 15px + 15px);
-    //     //     grid-gap: 0.7em;
-    //     //     justify-content: center;
-            
-    //     // }
-
-
-    //     // .ProductList {
-    //     //     display: flex;
-    //     //     justify-content: space-evenly;
-    //     //     flex-wrap: wrap;
-    //     //     background-color: royalblue;
-
-    //     //     &::after {
-    //     //         content: "";
-    //     //         flex: 0 0 40% 0;
-    //     //         //margin: -1em;
-    //     //     }
-    //     // }
-        
-      
-
-    // }
-
-
-
-
-
-
-
-
-
-
-    // display: flex;
-    // justify-content: center;
-    // padding: 1em;
-    // >div {
-    //     margin: 0.5em;
-    // }
-    
-    // text-align: center;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
-    
-
-    // .Categories {
-    //     padding: 3em 30em;
-    //     width: 100%;
-    //     margin-bottom: 1em;
-    //     background-color: rgb(187, 187, 187);
-    //     max-height: 3em;
-    // }
-
-    // // .Filtering {
-    // //     padding: 6em 30em;
-    // //     background-color: rgb(187, 187, 187);
-    // // }
-
-    // .ProductsDisplay {
-    //     background-color: rgb(224, 224, 224);
-    //     padding: 1em;
-    //     margin-top: 0.5em;
-       
-        
-        
-
-    //     >div {
-    //         padding: 3em;
-    //         background-color: gray;
-    //         margin: 1em;
-    //     }
-    // }
 }

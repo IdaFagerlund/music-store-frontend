@@ -5,30 +5,18 @@
     background-color: $blue3;
 
     .MenuItems>div {
-        //padding: 1em 6em 1em 2em;
-        //width: 8em;
         padding: 1em 0 1em 2em;
         min-width: 10.5em;
         white-space: initial;
-   
-    //border-bottom: 1px solid radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-    
-   
 
-    &:hover {
-        background-color: darken($blue3, 3.5);
-        cursor: pointer;
+        &:hover {
+            background-color: darken($blue3, 3.5);
+            cursor: pointer;
+        }
     }
-    }
+
     hr {
         margin: 0 auto;
         width: 9em;
     }
-
-    
-
-    
-
-    
-
 }

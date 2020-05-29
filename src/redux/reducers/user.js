@@ -1,13 +1,18 @@
 const initialState = {
     data: {
         username: "My page",
-        access: []
+        access: [],
+        loggedIn: false
     },
     isLoading: false,
-    error: ""
+    error: {
+        username: null,
+        password: null,
+        email: "Unavailable email"
+    }
 }
 
-//TODO: remember to set cookies and send authorization headers etc when connecting to the real backend
+//TODO: set jwt cookie at login. remove at logout, send authorization header with the jwt at every request
 
 export default function (state = initialState, action) {
     switch (action.type) {
@@ -15,45 +20,47 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isLoading: true,
-                error: ""
+                error: { username: null, password: null, email: null }
             }
         case "LOGIN_SUCCESS":
             return {
                 ...state,
-                data: action.payload,
-                isLoading: false,
-                error: ""
+                data: {
+                    ...action.payload,
+                    loggedIn: true
+                },
+                isLoading: false
             }
         case "LOGIN_FAIL":
             return {
                 ...state,
                 isLoading: false,
-                error: "Error logging in" //todo, grab error messages from backend payload? for example invalid username etc
+                error: action.payload.error
             }
         case "REGISTER_LOADING":
             return {
                 ...state,
                 isLoading: true,
-                error: ""
+                error: { username: null, password: null, email: null }
             }
         case "REGISTER_SUCCESS":
             return {
                 ...state,
-                isLoading: false,
-                error: ""
+                isLoading: false
             }
         case "REGISTER_FAIL":
             return {
                 ...state,
                 isLoading: false,
-                error: "Error registering new user"
+                error: action.payload.error
             }
         case "LOGOUT":
             return {
                 ...state,
                 data: {
                     username: "My page",
-                    access: []
+                    access: [],
+                    loggedIn: false
                 },
             }
         default:

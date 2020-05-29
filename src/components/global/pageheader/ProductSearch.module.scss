@@ -5,10 +5,10 @@
     display: flex;
     align-items: center;
     position: relative;
-    color: $black;
+    color: black;
 
     .MagnifyingGlassIconContainer {
-        background-color: $white;
+        background-color: white;
         border-radius: 1em 0 0 1em;
         padding: 0.2em 0.1em 0 0.3em;
     }
@@ -32,7 +32,7 @@
         z-index: 1;
         border-radius: 0 0 1em 1em;
         width: 100%;
-        background-color: $white;
+        background-color: white;
         top: 1.4em;
         left: 0;  
         box-shadow: 2px 6px 7px 0px rgba(50, 50, 50, 0.23);
@@ -65,7 +65,6 @@
                 }
             }
         }
-
     }
 
     @media screen and (max-width: $responsive-size-small) {
