@@ -19,7 +19,7 @@ export default function (state = initialState, action) {
                 isLoading: false,
                 error: ""
             }
-        case "FETCH_PRODUCT_CATEGORIES_FAILURE":
+        case "FETCH_PRODUCT_CATEGORIES_FAIL":
             return {
                 ...state,
                 isLoading: false,

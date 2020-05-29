@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 
-export default function ContainerThatCloseOnOutsideClickForClickComponent({ clickTriggerComponent, containerContentComponent, onContainerClose }) {
+export default function ContainerThatCloseOnOutsideClickForClickComponent({ clickTriggerComponent, content, onContainerClose }) {
     const [open, setOpen] = useState(false)
     const node = useRef()
 
@@ -16,6 +16,7 @@ export default function ContainerThatCloseOnOutsideClickForClickComponent({ clic
     }
 
     useEffect(() => {
+
         if (open) {
             document.addEventListener("mousedown", handleClickOutside)
         }
@@ -31,14 +32,52 @@ export default function ContainerThatCloseOnOutsideClickForClickComponent({ clic
     return (
         <div ref={node}>
             {clickTriggerComponent && <div onClick={e => setOpen(!open)}>{clickTriggerComponent}</div>}
-            {open && containerContentComponent}
+            {open && content}
         </div>
     )
 
 }
 
 
-export function ContainerThatCloseOnOutsideClickForTextFieldComponent({ containerContentComponent, openContainerCondition, onContainerClose, parentContainerReference }) {
+export function ContainerThatCloseOnOutsideClickForModalComponent({ content, onContainerClose }) {
+    const [open, setOpen] = useState(true)
+    const node = useRef()
+
+
+    const handleClickOutside = (event) => {
+        if (node.current.contains(event.target)) {
+            return;
+        }
+        if (onContainerClose) {
+            onContainerClose()
+        }
+        setOpen(false)
+    }
+
+    useEffect(() => {
+        if (open) {
+            console.log("adding event")
+            document.addEventListener("mousedown", handleClickOutside)
+        }
+        else {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [])
+
+
+    return (
+        <div ref={node}>
+            {open && content}
+        </div>
+    )
+
+}
+
+
+export function ContainerThatCloseOnOutsideClickForTextFieldComponent({ content, openContainerCondition, onContainerClose, parentContainerReference }) {
     const node = useRef()
 
     const handleClickOutside = (event) => {
@@ -67,7 +106,7 @@ export function ContainerThatCloseOnOutsideClickForTextFieldComponent({ containe
 
     return (
         <div ref={node}>
-            {openContainerCondition && containerContentComponent}
+            {openContainerCondition && content}
         </div>
     )
 

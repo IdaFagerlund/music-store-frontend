@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 import styles from "./ProductSearch.module.scss"
-import { MagnifyingGlassIcon, ArrowRightIcon } from "../utils/Icons"
-import ElectricGuitarImage from "../../assets/electric_guitar.png"
+import { MagnifyingGlassIcon, ArrowRightIcon } from "../../utils/Icons"
+import ElectricGuitarImage from "../../../assets/electric_guitar.png"
 import { useHistory } from "react-router-dom"
-import { ContainerThatCloseOnOutsideClickForTextFieldComponent } from "../utils/ContainerThatCloseOnOutsideClick"
+import { ContainerThatCloseOnOutsideClickForTextFieldComponent } from "../../utils/ContainerThatCloseOnOutsideClick"
 
 
 export default function ProductSearch() {
@@ -49,7 +49,7 @@ export default function ProductSearch() {
             <div className={`${styles.MagnifyingGlassIconContainer} ${searchText && styles.MagnifyingGlassIconContainerDuringSearch}`}><MagnifyingGlassIcon /></div>
             <input className={`${styles.SearchInput} ${searchText && styles.SearchInputDuringSearch}`} type="text" placeholder="Search..." onChange={event => setSearchText(event.target.value)} value={searchText} />
             <ContainerThatCloseOnOutsideClickForTextFieldComponent
-                containerContentComponent={<SearchResults />}
+                content={<SearchResults />}
                 openContainerCondition={searchText}
                 onContainerClose={() => setSearchText("")}
                 parentContainerReference={parentContainerReference}

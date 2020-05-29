@@ -2,9 +2,11 @@ import React, { useEffect } from "react"
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import "./scss/global/GlobalStyles.scss"
 import { useDispatch } from "react-redux"
-import Header from "./pageheader/PageHeader"
-import Footer from "./pagefooter/PageFooter"
+import Header from "./global/pageheader/PageHeader"
+import Footer from "./global/pagefooter/PageFooter"
 import AboutPage from "./pages/aboutpage/AboutPage"
+import UserPage from "./pages/userpage/UserPage"
+import AdminPage from "./pages/adminpage/AdminPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
 import ProductDetailsPage from "./pages/productdetailspage/ProductDetailsPage"
@@ -22,8 +24,10 @@ export default function App() {
 			<Router>
 				<Header />
 				<Switch>
-					<Route path="/product-browse" exact component={BrowseProductsPage}></Route>
+					<Route path="/products" exact component={BrowseProductsPage}></Route>
 					<Route path="/product/" component={ProductDetailsPage}></Route>
+					<Route path="/user" exact component={UserPage}></Route>
+					<Route path="/admin" exact component={AdminPage}></Route>
 					<Route path="/about" exact component={AboutPage}></Route>
 					<Route path="/" exact component={HomePage}></Route>
 					<Route path="*" component={HomePage}>

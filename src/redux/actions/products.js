@@ -20,7 +20,7 @@ export const fetchProducts = () => {
             })
             .catch((error) => {
                 dispatch({
-                    type: "FETCH_PRODUCTS_FAILURE"
+                    type: "FETCH_PRODUCTS_FAIL"
                 })
             })
     }
@@ -59,7 +59,7 @@ export const fetchProductCategories = () => {
             })
             .catch((error) => {
                 dispatch({
-                    type: "FETCH_PRODUCT_CATEGORIES_FAILURE"
+                    type: "FETCH_PRODUCT_CATEGORIES_FAIL"
                 })
             })
     }

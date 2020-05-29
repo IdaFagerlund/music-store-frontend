@@ -49,7 +49,7 @@ export default function SortByDropdownMenu() {
         <div className={styles.SortByDropdownMenu} ref={parentContainerReference}>
             <ContainerThatCloseOnOutsideClickForClickComponent
                 clickTriggerComponent={<SortByDropDownButton />}
-                containerContentComponent={<SortByDropdownList />}
+                content={<SortByDropdownList />}
                 onContainerClose={() => setIsShowingDropdownList(false)}
             />
         </div>

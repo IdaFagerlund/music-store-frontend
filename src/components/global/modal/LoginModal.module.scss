@@ -1,0 +1,92 @@
+@import "../../scss/global/ColorVariables";
+@import "../../scss/global/ScreenSizeResponsivenessVariables";
+
+.LoginModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    .Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $blue3;
+        border-radius: 0.3em 0.3em 0 0;
+        padding: 0.9em 1em;
+        min-width: 19em;
+        font-size: 24px;
+
+        .CloseButton {
+            padding: 0.08em 0.25em 0 0.28em;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .Content {
+        background-color: $white;
+        color: black;
+        padding: 1.5em 1.8em 4em 1.8em;
+
+        .InputContainer {
+            padding: 0.5em 0;
+
+            p {
+                padding-bottom: 0.5em;
+            }
+
+            input {
+                outline: none;
+                border-radius: 0.2em;
+                padding: 0.3em;
+                min-width: 25em;
+                border: 1px solid rgb(184, 184, 184);
+            }
+
+            .InputError {
+                color: white;
+                background-color: rgb(235, 102, 102);
+                margin-top: 0.4em;
+                padding: 0.3em;
+                border-radius: 0.2em;
+                max-width: 20.8em;
+            }
+        }
+    }
+
+    .Footer {
+        background-color: $grey1;
+        padding: 1em;
+        border-radius: 0 0 0.3em 0.3em;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .NewUserButton {
+            color: rgb(114, 114, 114);
+            padding: 0.5em 0.5em;
+            
+            border-radius: 0.15em;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .LoginButton {
+            background-color: $blue3;
+            padding: 0.8em 1em;
+            margin-left: 0.9em;
+            min-width: 8em;
+            border-radius: 0.15em;
+            font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+}

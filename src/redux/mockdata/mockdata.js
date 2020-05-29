@@ -1,4 +1,4 @@
-// Mock data to aid development when needed
+// Mock data to use while developing when needed
 
 export const mockProductCategoriesData = [
     {
@@ -22,6 +22,16 @@ export const mockProductCategoriesData = [
         "subCategories": []
     }
 ]
+
+// not including jwt in cookies
+export const mockLoginDataUser = {
+    username: "Super user name",
+    access: ["user"]
+}
+export const mockLoginDataAdmin = {
+    username: "Super admin name",
+    access: ["admin"]
+}
 
 export const mockProductsData = [
     {
