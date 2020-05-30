@@ -5,6 +5,7 @@ import { MagnifyingGlassIcon, ArrowRightIcon } from "../../utils/Icons"
 import ElectricGuitarImage from "../../../assets/electric_guitar.png"
 import { useHistory } from "react-router-dom"
 import { ContainerThatCloseOnOutsideClickForTextFieldComponent } from "../../utils/ContainerThatCloseOnOutsideClick"
+import ContainerThatCloseOnOutsideClick from "../../utils/ContainerThatCloseOnOutsideClick"
 
 
 export default function ProductSearch() {
@@ -48,12 +49,19 @@ export default function ProductSearch() {
         <div className={styles.ProductSearch} ref={parentContainerReference}>
             <div className={`${styles.MagnifyingGlassIconContainer} ${searchText && styles.MagnifyingGlassIconContainerDuringSearch}`}><MagnifyingGlassIcon /></div>
             <input className={`${styles.SearchInput} ${searchText && styles.SearchInputDuringSearch}`} type="text" placeholder="Search..." onChange={event => setSearchText(event.target.value)} value={searchText} />
-            <ContainerThatCloseOnOutsideClickForTextFieldComponent
+
+            <ContainerThatCloseOnOutsideClick
+                content={<SearchResults />}
+                parentComponentReference={parentContainerReference}
+                isVisible={searchText}
+                onContainerClose={() => setSearchText("")}
+            />
+            {/* <ContainerThatCloseOnOutsideClickForTextFieldComponent
                 content={<SearchResults />}
                 openContainerCondition={searchText}
                 onContainerClose={() => setSearchText("")}
                 parentContainerReference={parentContainerReference}
-            />
+            /> */}
         </div>
     )
 }

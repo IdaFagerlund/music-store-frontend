@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Modal.module.scss"
 import { useSelector, useDispatch } from "react-redux"
-import { ContainerThatCloseOnOutsideClickForModalComponent } from "./ContainerThatCloseOnOutsideClick"
+import ContainerThatCloseOnOutsideClick from "./ContainerThatCloseOnOutsideClick"
 import { setModalStatus } from "../../redux/actions/modal"
 import LoginAndRegisterModal from "../global/pageheader/LoginAndRegisterModal"
 
@@ -22,9 +22,11 @@ export default function Modal() {
         <div className={styles.Modal}>
             {modalStatus.isVisible &&
                 <div className={styles.ModalBackground}>
-                    <ContainerThatCloseOnOutsideClickForModalComponent
+                    <ContainerThatCloseOnOutsideClick
                         content={<div className={styles.Content}><Content /></div>}
-                        onContainerClose={() => dispatch(setModalStatus({ isVisible: false, content: null }))} />
+                        isVisible={modalStatus.isVisible}
+                        onContainerClose={() => dispatch(setModalStatus({ isVisible: false, content: null }))}
+                    />
                 </div>
             }
         </div>

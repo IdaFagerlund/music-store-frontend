@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import styles from "./PageHeader.module.scss"
 import MusicStoreLogo from "../../../assets/MusicStoreLogo.png"
 import { useHistory } from "react-router-dom"
@@ -6,12 +6,16 @@ import { UserIcon, ShoppingCartIcon } from "../../utils/Icons"
 import ProductSearch from "./ProductSearch"
 import UserMenu from "./UserMenu"
 import ShoppingCart from "./ShoppingCart"
-import ContainerThatCloseOnOutsideClickForClickComponent from "../../utils/ContainerThatCloseOnOutsideClick"
+import ContainerThatCloseOnOutsideClick from "../../utils/ContainerThatCloseOnOutsideClick"
 import { useSelector } from "react-redux"
 
 export default function PageHeader() {
+	const [isShowingMyPageDropdown, setShowingMyPageDropdown] = useState(false)
+	const [isShowingShoppingCartDropdown, setShowingShoppingCartDropdown] = useState(false)
+	const myPageButtonReference = useRef()
+	const shoppingCartButtonReference = useRef()
+
 	const user = useSelector((state) => state.user.data)
-	const [showUserMenu, setShowUserMenu] = useState(false)
 	const history = useHistory()
 
 
@@ -30,19 +34,42 @@ export default function PageHeader() {
 		)
 	}
 
-	const BottomHeader = () => {
+
+	const bottomHeader = () => {
 		return (
 			<div className={styles.BottomHeader}>
 				<ProductSearch />
+
 				<div className={styles.UserAndShoppingCartContainer}>
-					<ContainerThatCloseOnOutsideClickForClickComponent
-						clickTriggerComponent={<div className={styles.IconAndText}><UserIcon /><p>{user.username}</p></div>}
-						content={<div className={styles.PopoutUserMenu}><UserMenu closeMenu={() => setShowUserMenu(!showUserMenu)} /></div>} />
-					<ContainerThatCloseOnOutsideClickForClickComponent
-						clickTriggerComponent={<div className={styles.IconAndText}><ShoppingCartIcon /><p>Shopping cart</p></div>}
-						content={<div className={styles.PopoutShoppingCart}><ShoppingCart /></div>}
-					/>
+					<div className={styles.Button} ref={myPageButtonReference} >
+						<div className={styles.ButtonContent} onClick={() => setShowingMyPageDropdown(!isShowingMyPageDropdown)}>
+							<UserIcon /><p>{user.username}</p>
+						</div>
+						<div className={styles.MyPageDropdown}>
+							<ContainerThatCloseOnOutsideClick
+								content={<div className={styles.PopoutUserMenu}><UserMenu closeMenu={() => setShowingMyPageDropdown(false)} /></div>}
+								parentComponentReference={myPageButtonReference}
+								isVisible={isShowingMyPageDropdown}
+								onContainerClose={() => setShowingMyPageDropdown(false)}
+							/>
+						</div>
+					</div>
+
+					<div className={styles.Button} ref={shoppingCartButtonReference} >
+						<div className={styles.ButtonContent} onClick={() => setShowingShoppingCartDropdown(!isShowingShoppingCartDropdown)}>
+							<ShoppingCartIcon /><p>Shopping cart</p>
+						</div>
+						<div className={styles.ShoppingCartDropdown}>
+							<ContainerThatCloseOnOutsideClick
+								content={<ShoppingCart />}
+								parentComponentReference={shoppingCartButtonReference}
+								isVisible={isShowingShoppingCartDropdown}
+								onContainerClose={() => setShowingShoppingCartDropdown(false)}
+							/>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		)
 	}
@@ -50,7 +77,7 @@ export default function PageHeader() {
 	return (
 		<header className={styles.PageHeader}>
 			<TopHeader />
-			<BottomHeader />
+			{bottomHeader()}
 		</header>
 	)
 

@@ -6,6 +6,9 @@
     border: 1px solid black;
     position: relative;
 
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
     &:hover {
         cursor: pointer;
     }
@@ -15,10 +18,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 0.7em 1em;
-        width: 14.5em; 
+        width: 14.5em;
     }
 
-    .SortByDropdownList {
+    .DropdownList {
         position: absolute;
         left: -0.05em;
         z-index: 1;
@@ -26,8 +29,7 @@
         border-left: 1px solid black;
         border-right: 1px solid black;
         border-bottom: 1px solid black;
-        
-        
+
         .ListItem {
             border-top: 1px solid black;
             width: 14.5em;

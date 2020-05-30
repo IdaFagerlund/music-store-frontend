@@ -22,7 +22,7 @@ export default function ProductDetailsPage() {
 
     return (
         <div className={styles.ProductDetailsPage}>
-            <p>product found:</p>
+            <p>page for found product:</p>
             {product.name}
             {product.id}
         </div>
