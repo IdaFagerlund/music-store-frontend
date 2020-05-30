@@ -44,27 +44,6 @@ export const updateSortAndFilterSelections = ({ sortParameter, doReverseSort, ma
     }
 }
 
-export const fetchProductCategories = () => {
-    return (dispatch) => {
-        dispatch({
-            type: "FETCH_PRODUCT_CATEGORIES_LOADING"
-        })
-        fetch("https://jsonplaceholder.typicode.com/todos/1")
-            .then((response) => response.json())
-            .then((data) => {
-                dispatch({
-                    type: "FETCH_PRODUCT_CATEGORIES_SUCCESS",
-                    payload: mockProductCategoriesData
-                })
-            })
-            .catch((error) => {
-                dispatch({
-                    type: "FETCH_PRODUCT_CATEGORIES_FAIL"
-                })
-            })
-    }
-}
-
 export const moveFeaturedProducts = (direction) => {
     return (dispatch) => {
         if (direction === "right") {

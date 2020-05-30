@@ -4,25 +4,30 @@
 @mixin categoriesRowStyle($backgroundColor) {
 
     background-color: $backgroundColor;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        width: 80%;
+        list-style: none;
         display: flex;
+        flex-direction: row;
         justify-content: center;
 
-        ul {
-            width: 80%;
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            li {
-                padding: 1em 3em;
-                &:hover {
-                    background-color: darken($backgroundColor, 7);
-                    cursor: pointer;
-                }
+        li {
+            padding: 1em 3em;
+            &:hover {
+                background-color: darken($backgroundColor, 7);
+                cursor: pointer;
             }
         }
+    }
 
+    @media screen and (max-width: $responsive-size-small) {
+        .MainCategory {
+            padding: 1em 1.8em;
+        }
+    }
 }
 
 .ProductCategories {
@@ -51,5 +56,4 @@
             }
         }
     }
-
 }
