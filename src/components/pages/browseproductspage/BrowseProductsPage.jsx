@@ -11,7 +11,7 @@ export default function BrowseProductsPage() {
     const filterSelections = useSelector((state) => state.productsortandfilterselections.currentSelections)
 
     const ProductList = () => {
-        const filteredProductsByCategory = filterSelections.mainCategory === "All" ? products.data : products.data.filter(product => product.category === filterSelections.mainCategory)
+        const filteredProductsByCategory = filterSelections.mainCategory === "All" ? products.data.all : products.data.all.filter(product => product.category === filterSelections.mainCategory)
         const filteredProductsBySubCategory = filterSelections.subCategory === null ? filteredProductsByCategory : filteredProductsByCategory.filter(product => product.subCategory === filterSelections.subCategory)
 
         const productInfoCards = filteredProductsBySubCategory.map(product =>

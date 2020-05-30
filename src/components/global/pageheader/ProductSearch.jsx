@@ -15,7 +15,7 @@ export default function ProductSearch() {
 
 
     const SearchResults = () => {
-        const filteredResults = products.data.filter(product => product.name.includes(searchText))
+        const filteredResults = products.data.all.filter(product => product.name.includes(searchText))
         const maxAmountOfResultsToShow = 7
 
         const searchResults = filteredResults.slice(0, maxAmountOfResultsToShow).map(product => {

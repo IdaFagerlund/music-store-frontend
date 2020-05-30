@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 
 export default function ProductDetailsPage() {
     const location = useLocation()
-    const product = useSelector((state) => state.products.data.find(product => product.id === getProductIdFromURL()))
+    const product = useSelector((state) => state.products.data.all.find(product => product.id === getProductIdFromURL()))
 
     function getProductIdFromURL() {
         const urlValues = location.pathname.split("/")

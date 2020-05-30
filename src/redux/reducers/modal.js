@@ -1,6 +1,6 @@
 const initialState = {
-    isVisible: true,
-    content: "login"
+    isVisible: false,
+    content: null
 }
 
 export default function (state = initialState, action) {

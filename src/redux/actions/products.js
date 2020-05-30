@@ -65,3 +65,19 @@ export const fetchProductCategories = () => {
     }
 }
 
+export const moveFeaturedProducts = (direction) => {
+    return (dispatch) => {
+        if (direction === "right") {
+            dispatch({
+                type: "MOVE_FEATURED_PRODUCTS_RIGHT"
+            })
+        }
+        else if (direction === "left") {
+            dispatch({
+                type: "MOVE_FEATURED_PRODUCTS_LEFT"
+            })
+        }
+    }
+}
+
+

@@ -1,5 +1,8 @@
 const initialState = {
-    data: [],
+    data: {
+        all: [],
+        featured: []
+    },
     isLoading: false,
     error: ""
 }
@@ -15,7 +18,10 @@ export default function (state = initialState, action) {
         case "FETCH_PRODUCTS_SUCCESS":
             return {
                 ...state,
-                data: action.payload,
+                data: {
+                    all: action.payload,
+                    featured: action.payload.filter(product => product.isFeatured === true)
+                },
                 isLoading: false,
                 error: ""
             }
@@ -27,12 +33,35 @@ export default function (state = initialState, action) {
             }
         case "SORT_PRODUCTS":
             const sortedData = action.payload.doReverseSort ?
-                state.data.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? -1 : 1) :
-                state.data.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? 1 : -1)
+                state.data.all.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? -1 : 1) :
+                state.data.all.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? 1 : -1)
 
             return {
                 ...state,
-                data: sortedData
+                data: {
+                    all: sortedData,
+                    featured: state.data.featured
+                }
+            }
+        case "MOVE_FEATURED_PRODUCTS_LEFT":
+            const firstElement = state.data.featured.shift()
+
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    featured: [...state.data.featured, firstElement]
+                }
+            }
+        case "MOVE_FEATURED_PRODUCTS_RIGHT":
+            const lastElement = state.data.featured.pop()
+
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                    featured: [lastElement, ...state.data.featured]
+                }
             }
         default:
             return state

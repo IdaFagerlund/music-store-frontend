@@ -1,0 +1,67 @@
+@import "../../scss/global/ColorVariables";
+@import "../../scss/global/ScreenSizeResponsivenessVariables";
+
+.FeaturedProductsSlideshow {
+    background-color: $grey1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 9em 4em 9em;
+
+    >h1 {
+        font-size: 44px;
+        padding-bottom: 0.8em;
+    }
+
+    .ArrowContainer {
+        background-color: rgb(207, 207, 207);
+        border-radius: 5em;
+        padding: 0.5em 0.6em;
+        margin: 0 0.9em;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        -moz-user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .Slideshow {
+        display: flex;
+        align-items: center;
+
+        .Cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-height: 35.35em;
+            overflow: hidden;
+            
+            .CardContainer {
+                margin: 1em 0.8em;
+            }
+        }
+    }
+}
+
+@media (max-width: 1093px) { 
+    .FeaturedProductsSlideshow {
+        max-width: 100%;
+    }
+    .Cards {
+        max-width: 20em;
+    }
+}
+
+@media (min-width: 1093px) and (max-width: 1500px) {
+    .Cards {
+        max-width: 40em;
+    }
+}
+
+@media (min-width: 1500px) {
+    .Cards {
+        max-width: 80em;
+    }
+}

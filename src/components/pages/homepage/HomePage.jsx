@@ -3,6 +3,7 @@ import styles from "./HomePage.module.scss"
 import Piano from "../../../assets/piano.png"
 import { useHistory } from "react-router-dom"
 import { ArrowRightIcon, ArrowLeftIcon } from "../../utils/Icons"
+import FeaturedProductsSlideshow from "./FeaturedProductsSlideshow"
 
 
 export default function HomePage() {
@@ -40,7 +41,7 @@ export default function HomePage() {
     return (
         <div className={styles.HomePage}>
             <HomePageImage />
-            <FeaturedProductsSlideShow />
+            <div className={styles.FeaturedProductsSlideshowContainer}><FeaturedProductsSlideshow /></div>
         </div>
     )
 }
