@@ -241,3 +241,42 @@ export const mockProductsData = [
         "reviews": [{}, {}]
     },
 ]
+
+
+
+
+/*backend
+
+--- products ---
+1 - get all at application load. access = all
+[
+    {
+        "id": 9,
+        "name": "the product name",
+        "description": "this is a description",
+        "averageReviewStars": 2, // calculate this on the backend
+        "stock": 20,
+        "isFeatured": false,
+        "price": 75.50,
+        "category": "Guitars",
+        "subCategory": "Electric",
+        "reviews": [{}, {}]
+    }
+]
+
+
+--- user ---
+2 - login = jwt authorization header. acces = everyone
+
+3 - post login to get user data and info. access = user or admin
+{
+    username: "Super user name",
+    access: ["user"],
+    orders: [],
+    reviews : []
+}
+
+4 - register
+
+
+*/

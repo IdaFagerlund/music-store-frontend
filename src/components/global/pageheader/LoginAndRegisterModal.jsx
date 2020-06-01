@@ -1,15 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./LoginAndRegisterModal.module.scss"
 import { CloseIcon } from "../../utils/Icons"
 import { useDispatch, useSelector } from "react-redux"
-import { setModalStatus, login, register } from "../../../redux/actions"
+import { setModalStatus, login, register, setLoginAndRegisterFieldErrors } from "../../../redux/actions"
 import { useHistory } from "react-router-dom"
 
 export default function LoginAndRegisterModal({ initialView }) {
     const [view, setView] = useState(initialView)
     const [textFieldFocus, setTextFieldFocus] = useState()
-    const fieldErrors = useSelector(state => state.user.error)
-    const loggedInUsername = useSelector(state => state.user.data.username)
+    const user = useSelector(state => state.user)
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -18,6 +17,13 @@ export default function LoginAndRegisterModal({ initialView }) {
         password: "",
         email: ""
     })
+
+    useEffect(() => {
+        if (user.data.loggedIn) {
+            history.push(`/user/${user.data.username}`)
+            dispatch(setModalStatus({ isVisible: false, content: null }))
+        }
+    }, [user.data.loggedIn])
 
 
     const InputField = ({ type, fieldName, value, onChange, error }) => {
@@ -35,8 +41,8 @@ export default function LoginAndRegisterModal({ initialView }) {
     const LoginContent = () => {
         return (
             <div>
-                <InputField type="text" fieldName="Username" value={fields.username} onChange={username => setFields({ ...fields, username })} error={fieldErrors.username} />
-                <InputField type="password" fieldName="Password" value={fields.password} onChange={password => setFields({ ...fields, password })} error={fieldErrors.password} />
+                <InputField type="text" fieldName="Username" value={fields.username} onChange={username => setFields({ ...fields, username })} error={user.loginAndRegisterFieldErrors.username} />
+                <InputField type="password" fieldName="Password" value={fields.password} onChange={password => setFields({ ...fields, password })} error={user.loginAndRegisterFieldErrors.password} />
             </div>
         )
     }
@@ -44,9 +50,9 @@ export default function LoginAndRegisterModal({ initialView }) {
     const RegisterContent = () => {
         return (
             <div>
-                <InputField type="text" fieldName="Email" value={fields.email} onChange={email => setFields({ ...fields, email })} error={fieldErrors.email} />
-                <InputField type="text" fieldName="Username" value={fields.username} onChange={username => setFields({ ...fields, username })} error={fieldErrors.username} />
-                <InputField type="password" fieldName="Password" value={fields.password} onChange={password => setFields({ ...fields, password })} error={fieldErrors.password} />
+                <InputField type="text" fieldName="Email" value={fields.email} onChange={email => setFields({ ...fields, email })} error={user.loginAndRegisterFieldErrors.email} />
+                <InputField type="text" fieldName="Username" value={fields.username} onChange={username => setFields({ ...fields, username })} error={user.loginAndRegisterFieldErrors.username} />
+                <InputField type="password" fieldName="Password" value={fields.password} onChange={password => setFields({ ...fields, password })} error={user.loginAndRegisterFieldErrors.password} />
             </div>
         )
     }
@@ -85,23 +91,14 @@ export default function LoginAndRegisterModal({ initialView }) {
                 <div className={styles.SwitchBetweenLoginAndRegisterButton} onClick={() => {
                     setView(view === "login" ? "register" : "login");
                     setFields({ username: "", password: "", email: "" })
+                    dispatch(setLoginAndRegisterFieldErrors({ usernameErrorMessage: null, passwordErrorMessage: null, emailErrorMessage: null }))
                 }}>
                     {view === "login" ? "New user?" : "Already a user?"}
                 </div>
-                <div className={styles.SubmitButton} onClick={() => {
-                    if (view === "login") {
-                        dispatch(login(fields))
-                        dispatch(setModalStatus({ isVisible: false, content: null }))
-                        //history.push("/")
-                        //Todo: handle success or fail. Combine with error messages in the <Input/>.
-                    }
-                    else {
-                        dispatch(register(fields))
-                        dispatch(setModalStatus({ isVisible: true, content: "login" }))
-                        //Todo: handle success or fail. Combine with error messages in the <Input/>.
-                    }
-                    view === "login" ? dispatch(login(fields)) : dispatch(register(fields))
-                }}>{view === "login" ? "Login" : "Register"}</div>
+                <div className={styles.SubmitButton} onClick={() => view === "login" ? dispatch(login(fields)) : dispatch(register(fields))}>
+                    {view === "login" ? "Login" : "Register"}
+                </div>
+
             </div>
         </div>
     )

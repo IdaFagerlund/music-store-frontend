@@ -42,8 +42,8 @@ export default function UserMenu({ closeMenu }) {
     return (
         <div className={styles.UserMenu}>
             {!user.loggedIn && <NotLoggedInMenu />}
-            {user.loggedIn && user.access.includes("user") && <LoggedInUserMenu />}
-            {user.loggedIn && user.access.includes("admin") && <LoggedInAdminMenu />}
+            {user.loggedIn && user.authorities.includes("ROLE_USER") && <LoggedInUserMenu />}
+            {user.loggedIn && user.authorities.includes("ROLE_ADMIN") && <LoggedInAdminMenu />}
         </div>
     )
 }

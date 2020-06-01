@@ -10,7 +10,7 @@ import AdminPage from "./pages/adminpage/AdminPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
 import ProductDetailsPage from "./pages/productdetailspage/ProductDetailsPage"
-import { fetchProducts } from "../redux/actions/products"
+import { fetchProducts, refreshLogin } from "../redux/actions"
 import Modal from "./utils/Modal"
 
 export default function App() {
@@ -18,6 +18,7 @@ export default function App() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
+		dispatch(refreshLogin())
 		dispatch(fetchProducts())
 	}, [])
 
@@ -28,8 +29,8 @@ export default function App() {
 				<Switch>
 					<Route path="/products" exact component={BrowseProductsPage}></Route>
 					<Route path="/product/" component={ProductDetailsPage}></Route>
-					{user.access.includes("user") && <Route path={`/user/${user.username}`} exact component={UserPage}></Route>}
-					{user.access.includes("admin") && <Route path="/admin" exact component={AdminPage}></Route>}
+					{user.authorities.includes("ROLE_USER") && <Route path={`/user/${user.username}`} exact component={UserPage}></Route>}
+					{user.authorities.includes("ROLE_ADMIN") && <Route path="/admin" exact component={AdminPage}></Route>}
 					<Route path="/about" exact component={AboutPage}></Route>
 					<Route path="/" exact component={HomePage}></Route>
 					<Route path="*" component={HomePage}>
@@ -37,9 +38,8 @@ export default function App() {
 					</Route>
 				</Switch>
 				<Footer />
+				<Modal />
 			</Router>
-
-			<Modal />
 		</div>
 	)
 }

@@ -43,7 +43,7 @@ export default function PageHeader() {
 				<div className={styles.UserAndShoppingCartContainer}>
 					<div className={styles.Button} ref={myPageButtonReference} >
 						<div className={styles.ButtonContent} onClick={() => setShowingMyPageDropdown(!isShowingMyPageDropdown)}>
-							<UserIcon /><p>{user.username}</p>
+							<UserIcon /><p>{user.loggedIn ? user.username : "My page"}</p>
 						</div>
 						<div className={styles.MyPageDropdown}>
 							<ContainerThatCloseOnOutsideClick

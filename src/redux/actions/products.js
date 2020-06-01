@@ -1,4 +1,5 @@
 import { mockProductsData, mockProductCategoriesData } from "../mockdata/mockdata.js"
+import { fetchGet } from "./api-service"
 
 
 export const fetchProducts = () => {
@@ -6,8 +7,7 @@ export const fetchProducts = () => {
         dispatch({
             type: "FETCH_PRODUCTS_LOADING"
         })
-        fetch("https://jsonplaceholder.typicode.com/todos/1")
-            .then((response) => response.json())
+        fetchGet("/users/accesstest/all")
             .then((data) => {
                 dispatch({
                     type: "FETCH_PRODUCTS_SUCCESS",
@@ -19,6 +19,7 @@ export const fetchProducts = () => {
                 })
             })
             .catch((error) => {
+                console.log("FAIL")
                 dispatch({
                     type: "FETCH_PRODUCTS_FAIL"
                 })

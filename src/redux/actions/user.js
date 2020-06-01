@@ -1,44 +1,81 @@
-import { mockLoginDataUser } from "../mockdata/mockdata.js"
+import { fetchPost, fetchGet } from "./api-service"
 
 export const login = (fields) => {
-    const payload = { username: fields.username, password: fields.password }
-
     return (dispatch) => {
         dispatch({
-            type: "LOGIN_LOADING"
+            type: "LOADING"
         })
-        fetch("https://jsonplaceholder.typicode.com/todos/1")
-            .then((response) => response.json())
-            .then((data) => {
+        fetchPost("/users/login", { username: fields.username, password: fields.password })
+            .then((response) => {
                 dispatch({
                     type: "LOGIN_SUCCESS",
-                    payload: mockLoginDataUser
+                    payload: { authorizationHeader: response.headers.get("Authorization"), data: response.data }
                 })
             })
-            .catch((error) => {
-                dispatch({
-                    type: "LOGIN_FAIL"
-                })
+            .catch((errorResponse) => {
+                if (errorResponse.status === 403) {
+                    dispatch({
+                        type: "SET_LOGIN_AND_REGISTER_FIELD_ERRORS",
+                        payload: {
+                            usernameErrorMessage: "Invalid username and password combination",
+                            passwordErrorMessage: "Invalid username and password combination"
+                        }
+                    })
+                }
+                else {
+                    dispatch({
+                        type: "FAIL"
+                    })
+                }
             })
+    }
+}
+
+
+export const refreshLogin = () => {
+    return (dispatch) => {
+        dispatch({
+            type: "LOGIN_REFRESH"
+        })
+    }
+}
+
+export const setLoginAndRegisterFieldErrors = ({ usernameErrorMessage, passwordErrorMessage, emailErrorMessage }) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SET_LOGIN_AND_REGISTER_FIELD_ERRORS",
+            payload: { usernameErrorMessage, passwordErrorMessage, emailErrorMessage }
+        })
     }
 }
 
 export const register = (fields) => {
     return (dispatch) => {
         dispatch({
-            type: "REGISTER_LOADING"
+            type: "LOADING"
         })
-        fetch("https://jsonplaceholder.typicode.com/todos/1")
-            .then((response) => response.json())
-            .then((data) => {
+        fetchPost("/users/register", fields)
+            .then((response) => {
                 dispatch({
                     type: "REGISTER_SUCCESS"
                 })
-            })
-            .catch((error) => {
                 dispatch({
-                    type: "REGISTER_FAIL"
+                    type: "SET_MODAL_STATUS",
+                    payload: { isVisible: true, content: "login" }
                 })
+            })
+            .catch((errorResponse) => {
+                if (errorResponse.status === 400) {
+                    dispatch({
+                        type: "SET_LOGIN_AND_REGISTER_FIELD_ERRORS",
+                        payload: errorResponse.data
+                    })
+                }
+                else {
+                    dispatch({
+                        type: "FAIL"
+                    })
+                }
             })
     }
 }
@@ -50,5 +87,26 @@ export const logout = () => {
         })
     }
 }
+
+// export const getUserData = () => { // TODO. this gets reviews and orders when visiting the profile page
+//     return (dispatch) => {
+//         dispatch({
+//             type: "USER_LOADING"
+//         })
+//         fetchGet({ url: "/users/" })
+//             .then((data) => {
+//                 dispatch({
+//                     type: "USER_DATA_SUCCESS"
+//                 })
+//             })
+//             .catch((error) => {
+//                 dispatch({
+//                     type: "USER_DATA_FAIL"
+//                 })
+//             })
+//     }
+// }
+
+//TODO: add/edit/remove review, add order. edit user such as password
 
 
