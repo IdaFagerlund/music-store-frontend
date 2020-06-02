@@ -1,8 +1,11 @@
 const SERVER_BASE_URL = process.env.NODE_ENV === 'development' ? "http://localhost:8080" : "https://somethingelse.com"
 
 
-export async function fetchGet(url) { //TODO: update to work more like fetchPost
-    const response = await fetch(`${SERVER_BASE_URL}${url}`, {
+export async function fetchGet(url) {
+    let customResponse = { status: null, headers: null, data: null }
+    let wasRequestSuccessful = false
+
+    customResponse.data = await fetch(`${SERVER_BASE_URL}${url}`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -11,15 +14,24 @@ export async function fetchGet(url) { //TODO: update to work more like fetchPost
         },
         mode: "cors"
     })
-    if (!response.ok) {
-        throw response
+        .then((response) => {
+            wasRequestSuccessful = response.ok
+            customResponse.status = response.status
+            customResponse.headers = response.headers
+            return response.json()
+        })
+        .catch((error) => { return {} })
+
+    if (!wasRequestSuccessful) {
+        throw customResponse
     }
-    return response
+
+    return customResponse
 }
 
 export async function fetchPost(url, requestBody) {
     let customResponse = { status: null, headers: null, data: null }
-    let wasRequestSuccessful = false;
+    let wasRequestSuccessful = false
 
     customResponse.data = await fetch(`${SERVER_BASE_URL}${url}`, {
         method: "POST",
@@ -46,4 +58,3 @@ export async function fetchPost(url, requestBody) {
 
     return customResponse
 }
-

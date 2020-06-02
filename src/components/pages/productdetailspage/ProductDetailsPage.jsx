@@ -25,6 +25,8 @@ export default function ProductDetailsPage() {
             <p>page for found product:</p>
             {product.name}
             {product.id}
+            <br />
+            <p>When this page is implemented you'll see the details of the product here as well as the product reviews left by users. You can also leave a review yourself.</p>
         </div>
     )
 }

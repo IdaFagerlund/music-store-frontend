@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./ProductInfoCard.module.scss"
-import ElectricGuitarImage from "../../../assets/electric_guitar.png"
 import { ArrowRightIcon, ShoppingCartIcon, StarIcon } from "../../utils/Icons"
+import { getImageBasedOnCategory } from "../../utils/product-category-image-handler"
 import { useHistory } from "react-router-dom"
 
 
@@ -22,12 +22,13 @@ export default function ProductInfoCard({ product }) {
         return <div className={styles.Stars}>{stars}</div>
     }
 
+
     return (
         <div className={styles.ProductInfoCard}>
-            <img src={ElectricGuitarImage} width={256} height={256} alt="image" />
+            <img src={getImageBasedOnCategory(`${product.category}${product.subCategory}`)} width={256} height={256} alt="image" />
             <h1>{product.name}</h1>
-            <p>{`${product.price} SEK`}</p>
-            <div className={styles.Rating}><Stars /><p>{`(${product.reviews.length})`}</p></div>
+            <p>{`${(Math.round(product.price * 100) / 100).toFixed(2)} SEK`}</p>
+            <div className={styles.Rating}><Stars /><p>{`(${product.numberOfReviews})`}</p></div>
             <p>{adaptDescriptionLength(product.description)}</p>
             <div className={styles.BottomRow}>
                 <div className={styles.AddToShoppingCartButton}><ShoppingCartIcon /></div>

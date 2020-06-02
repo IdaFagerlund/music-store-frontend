@@ -4,7 +4,7 @@ const initialState = {
         featured: []
     },
     isLoading: false,
-    error: ""
+    error: null
 }
 
 export default function (state = initialState, action) {
@@ -13,17 +13,17 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isLoading: true,
-                error: ""
+                error: null
             }
         case "FETCH_PRODUCTS_SUCCESS":
             return {
                 ...state,
                 data: {
                     all: action.payload,
-                    featured: action.payload.filter(product => product.isFeatured === true)
+                    featured: action.payload.filter(product => product.featured === true)
                 },
                 isLoading: false,
-                error: ""
+                error: null
             }
         case "FETCH_PRODUCTS_FAIL":
             return {

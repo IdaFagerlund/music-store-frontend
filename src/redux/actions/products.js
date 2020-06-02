@@ -7,19 +7,18 @@ export const fetchProducts = () => {
         dispatch({
             type: "FETCH_PRODUCTS_LOADING"
         })
-        fetchGet("/users/accesstest/all")
-            .then((data) => {
+        fetchGet("/products/all/light")
+            .then((response) => {
                 dispatch({
                     type: "FETCH_PRODUCTS_SUCCESS",
-                    payload: mockProductsData
+                    payload: response.data
                 })
                 dispatch({
                     type: "SORT_PRODUCTS",
                     payload: { sortParameter: "averageReviewStars", doReverseSort: true }
                 })
             })
-            .catch((error) => {
-                console.log("FAIL")
+            .catch((errorResponse) => {
                 dispatch({
                     type: "FETCH_PRODUCTS_FAIL"
                 })

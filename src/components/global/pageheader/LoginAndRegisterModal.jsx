@@ -20,7 +20,7 @@ export default function LoginAndRegisterModal({ initialView }) {
 
     useEffect(() => {
         if (user.data.loggedIn) {
-            history.push(`/user/${user.data.username}`)
+            user.data.authorities.includes("ROLE_ADMIN") ? history.push("/admin") : history.push(`/user/${user.data.username}`)
             dispatch(setModalStatus({ isVisible: false, content: null }))
         }
     }, [user.data.loggedIn])
