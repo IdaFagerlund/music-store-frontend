@@ -1,11 +1,11 @@
-//const SERVER_BASE_URL "http://localhost:8080"
-const SERVER_BASE_URL = "https://ec2-3-133-85-180.us-east-2.compute.amazonaws.com"
+//const SERVER_BASE_URL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_SERVER_URL_DEV : process.env.REACT_APP_SERVER_URL_PROD
+
 
 export async function fetchGet(url) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${SERVER_BASE_URL}${url}`, {
+    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -33,7 +33,7 @@ export async function fetchPost(url, requestBody) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${SERVER_BASE_URL}${url}`, {
+    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
         method: "POST",
         credentials: "include",
         headers: {
