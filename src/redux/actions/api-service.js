@@ -1,4 +1,4 @@
-const SERVER_BASE_URL = process.env.NODE_ENV === 'development' ? "http://localhost:8080" : "http://ec2-3-133-85-180.us-east-2.compute.amazonaws.com:8080"
+const SERVER_BASE_URL = process.env.NODE_ENV === 'development' ? "http://localhost:8080" : "https://ec2-3-133-85-180.us-east-2.compute.amazonaws.com"
 
 
 export async function fetchGet(url) {
