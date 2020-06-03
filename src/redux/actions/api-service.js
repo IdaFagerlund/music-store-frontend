@@ -1,6 +1,3 @@
-//const SERVER_BASE_URL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_SERVER_URL_DEV : process.env.REACT_APP_SERVER_URL_PROD
-
-
 export async function fetchGet(url) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
@@ -28,6 +25,7 @@ export async function fetchGet(url) {
 
     return customResponse
 }
+
 
 export async function fetchPost(url, requestBody) {
     let customResponse = { status: null, headers: null, data: null }
