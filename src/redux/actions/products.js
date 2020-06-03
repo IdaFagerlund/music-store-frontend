@@ -1,4 +1,3 @@
-import { mockProductsData, mockProductCategoriesData } from "../mockdata/mockdata.js"
 import { fetchGet } from "./api-service"
 
 
