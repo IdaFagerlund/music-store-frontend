@@ -2,7 +2,7 @@ export async function fetchGet(url) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
+    customResponse.data = await fetch(`http://ec2-3-133-85-180.us-east-2.compute.amazonaws.com:8080${url}`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -31,7 +31,7 @@ export async function fetchPost(url, requestBody) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
+    customResponse.data = await fetch(`http://ec2-3-133-85-180.us-east-2.compute.amazonaws.com:8080${url}`, {
         method: "POST",
         credentials: "include",
         headers: {
