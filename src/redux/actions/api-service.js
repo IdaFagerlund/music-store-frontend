@@ -2,7 +2,7 @@ export async function fetchGet(url) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
+    customResponse.data = await fetch(`https://jsonplaceholder.typicode.com/todos/1`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -31,7 +31,7 @@ export async function fetchPost(url, requestBody) {
     let customResponse = { status: null, headers: null, data: null }
     let wasRequestSuccessful = false
 
-    customResponse.data = await fetch(`${process.env.REACT_APP_SERVER_URL}${url}`, {
+    customResponse.data = await fetch(`https://jsonplaceholder.typicode.com/todos/1`, {
         method: "POST",
         credentials: "include",
         headers: {
