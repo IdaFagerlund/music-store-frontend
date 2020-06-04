@@ -1,4 +1,4 @@
-# Music store webshop
+## Music store webshop - frontend
 Checkout the hosted and running project here:  
 [https://putlinkhere](https://putlinkhere)  
 
