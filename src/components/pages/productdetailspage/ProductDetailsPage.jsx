@@ -3,8 +3,9 @@ import styles from "./ProductDetailsPage.module.scss"
 import { useLocation, useHistory } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import ReviewSection from "./ReviewSection"
-import { ArrowRightIcon, ShoppingCartIcon, StarIcon } from "../../utils/Icons"
-import { fetchProductById, fetchProductReviewsByProductId } from "../../../redux/actions/products"
+import ProductDetailsView from "./ProductDetailsView"
+import { StarIcon } from "../../utils/Icons"
+import { fetchProductById } from "../../../redux/actions/products"
 import ElectricGuitarImage from "../../../assets/electric_guitar.png"
 import AcousticGuitarImage from "../../../assets/acoustic_guitar.png"
 import GrandPianoImage from "../../../assets/grand_piano.png"
@@ -38,31 +39,6 @@ export default function ProductDetailsPage() {
         }
     }, [])
 
-    const Stars = () => {
-        let stars = []
-        for (let i = 1; i <= 5; i++) {
-            stars.push(<StarIcon key={i} color={i <= product.averageReviewStars ? "#FFFA3F" : "#E0E0E0"} />)
-        }
-        return <div className={styles.Stars}>{stars}</div>
-    }
-
-
-    const ProductDetails = () => {
-        return (
-            <div className={styles.ProductDetails}>
-                <img src={getImageBasedOnCategory(`${product.category}${product.subCategory}`)} width={256} height={256} alt="image" />
-                <div className={styles.Info}>
-                    <h2>Title</h2>
-                    <p>price</p>
-                    {/* <Stars product={product} /> */}
-                    <p>description</p>
-                    <p>stock</p>
-                    <p>addtocart</p>
-                </div>
-
-            </div>
-        )
-    }
 
     if (!product.data) {
         return (
@@ -78,8 +54,8 @@ export default function ProductDetailsPage() {
 
     return (
         <div className={styles.ProductDetailsPage}>
-            {/* <div className={styles.ProductDetailsContainer}><ProductDetails /></div>
-            <div className={styles.ReviewSectionContainer}><CommentSection productId={product.id} /></div> */}
+            <div className={styles.ProductDetailsContainer}><ProductDetailsView product={product.data} /></div>
+            <div className={styles.ReviewSectionContainer}><ReviewSection productId={product.data.id} /></div>
         </div>
     )
 }
@@ -92,7 +68,7 @@ export const Stars = ({ product }) => {
 
     let stars = []
     for (let i = 1; i <= 5; i++) {
-        stars.push(<div className={styles.Star}><StarIcon key={i} color={i <= averageStarRating ? "#FFFA3F" : "#E0E0E0"} /></div>)
+        stars.push(<div key={i} className={styles.Star}><StarIcon color={i <= averageStarRating ? "#FFFA3F" : "#E0E0E0"} /></div>)
     }
     return <div className={styles.Rating}>{stars}<p>{`(${numberOfReviews})`}</p></div>
 }

@@ -1,0 +1,62 @@
+@import "../../scss/global/ColorVariables";
+@import "../../scss/global/ScreenSizeResponsivenessVariables";
+
+.ProductDetailsView {
+    background-color: $grey1;
+    display: flex;
+  
+    
+    img {
+        border: 1px solid black;
+    }
+
+    .Info {
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            align-self: flex-end;
+            margin: 0.2em 2em;
+        }
+
+        p {
+            text-align: right;
+        }
+
+        .ProductName {
+            font-size: 46px;
+            font-style: italic;
+            margin-right: 0.65em;
+        }
+
+        .StockAndAddToCartContainer {
+            margin-top: 0.9em;
+
+            .AddToCartButton {
+                margin-top: 0.3em;
+                padding: 0.5em 1em;
+                display: flex;
+                align-items: center;
+                color: white;
+                background-color: $green;
+    
+                p {
+                    margin-right: 0.8em;
+                }
+    
+                &:hover {
+                    background-color: $green-hover;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: $responsive-size-small) {
+    .ProductDetailsView {
+
+        flex-direction: column;
+    }
+}
