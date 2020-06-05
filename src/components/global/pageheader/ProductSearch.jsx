@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import styles from "./ProductSearch.module.scss"
 import { MagnifyingGlassIcon, ArrowRightIcon } from "../../utils/Icons"
 import { useHistory } from "react-router-dom"
-import { getImageBasedOnCategory } from "../../utils/product-category-image-handler"
+import { getImageBasedOnCategory } from "../../pages/productdetailspage/ProductDetailsPage"
 import ContainerThatCloseOnOutsideClick from "../../utils/ContainerThatCloseOnOutsideClick"
 
 
@@ -28,7 +28,7 @@ export default function ProductSearch() {
             return (
                 <div className={styles.SearchResult} key={product.id} onClick={() => { history.push(`/product/${product.id}`); setSearchText("") }}>
                     <div className={styles.ImageAndNameContainer}>
-                        <img src={getImageBasedOnCategory(`${product.category}${product.subCategory}`)} width={64} height={64} alt="image" />
+                        <img src={getImageBasedOnCategory(product.mainCategory, product.subCategory)} width={64} height={64} alt="image" />
                         <p>{highlightedProductName[0]}</p><p><b>{highlightedProductName[1]}</b></p><p>{highlightedProductName[2]}</p>
                     </div>
                     <ArrowRightIcon size={20} color={"#808080"} />

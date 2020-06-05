@@ -6,7 +6,7 @@ export const fetchProducts = () => {
         dispatch({
             type: "FETCH_PRODUCTS_LOADING"
         })
-        fetchGet("/products/all/light")
+        fetchGet("/products/all/full")
             .then((response) => {
                 dispatch({
                     type: "FETCH_PRODUCTS_SUCCESS",
@@ -21,6 +21,18 @@ export const fetchProducts = () => {
                 dispatch({
                     type: "FETCH_PRODUCTS_FAIL"
                 })
+            })
+    }
+}
+
+export const fetchProductById = (id) => {
+    return () => {
+        return fetchGet(`/products/${id}`)
+            .then((response) => {
+                return response.data
+            })
+            .catch((errorResponse) => {
+                throw errorResponse
             })
     }
 }

@@ -2,5 +2,29 @@
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
 .ProductDetailsPage {
-    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ProductDetailsContainer {
+
+    }
+
+    .CommentSectionContainer {
+
+    }
+}
+
+.Rating {
+    display: flex;
+    align-items: center;
+
+    p {
+        padding: 0 0 0.2em 0.2em;
+        font-size: 14px;
+    }
+
+    .Star {
+        margin: 0.3em 0.3em 0.3em 0;
+    }
 }
