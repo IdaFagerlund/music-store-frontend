@@ -44,7 +44,7 @@ export default function SortByDropdownMenu() {
 
             <div className={styles.ChosenSortByCategory} onClick={() => setShowingDropdownList(!isShowingDropdownList)}>
                 <p>{`Sort by ${sortByCategoryOptions.find(s => s.sortParameter === sortSelection.sortParameter && s.doReverseSort === sortSelection.doReverseSort).categoryOption}`}</p>
-                {isShowingDropdownList ? <ArrowUpIcon size={15} color="#000000" /> : <ArrowDownIcon size={15} color="#000000" />}
+                {isShowingDropdownList ? <ArrowUpIcon size={24} color="#000000" /> : <ArrowDownIcon size={24} color="#000000" />}
             </div>
 
             <ContainerThatCloseOnOutsideClick

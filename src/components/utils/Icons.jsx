@@ -55,45 +55,45 @@ export const MagnifyingGlassIcon = ({ color = "#3f3f3f", size = 15 }) => {
 	)
 }
 
-export const ArrowRightIcon = ({ color = "#ffffff", size = 40 }) => {
+export const ArrowRightIcon = ({ color = "#ffffff", size = 38 }) => {
 	return (
-		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(20.000000,815.000000) scale(1,1) rotate(-90)" fill={color}>
-				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
-				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+		<svg viewBox="0 0 22 22" width={size} height={size}>
+			<g transform="matrix(.03541-.00013.00013.03541 4.5 4)" fill={color} preserveAspectRatio="xMidYMid meet">
+				<path d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 
+				0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"/>
 			</g>
 		</svg>
 	)
 }
 
-export const ArrowLeftIcon = ({ color = "#ffffff", size = 40 }) => {
+export const ArrowLeftIcon = ({ color = "#ffffff", size = 38 }) => {
 	return (
-		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(520.000000,-150.000000) scale(1,1) rotate(90)" fill={color}>
-				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
-				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+		<svg viewBox="0 0 22 22" width={size} height={size}>
+			<g transform="matrix(.03541-.00013.00013.03541 17 20) rotate(180)" fill={color} preserveAspectRatio="xMidYMid meet">
+				<path d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 
+				0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"/>
 			</g>
 		</svg>
 	)
 }
 
-export const ArrowDownIcon = ({ color = "#ffffff", size = 40 }) => {
+export const ArrowDownIcon = ({ color = "#ffffff", size = 38 }) => {
 	return (
-		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(-200.000000, 80.000000) scale(1,1) rotate(0)" fill={color}>
-				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
-				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+		<svg viewBox="0 0 22 22" width={size} height={size}>
+			<g transform="matrix(.03541-.00013.00013.03541 20 4) rotate(90)" fill={color} preserveAspectRatio="xMidYMid meet">
+				<path d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 
+				0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"/>
 			</g>
 		</svg>
 	)
 }
 
-export const ArrowUpIcon = ({ color = "#ffffff", size = 40 }) => {
+export const ArrowUpIcon = ({ color = "#ffffff", size = 38 }) => {
 	return (
-		<svg width={size} height={size} viewBox="-40 5 600 600" preserveAspectRatio="xMidYMid meet">
-			<g transform="translate(760.000000, 600.000000) scale(1,1) rotate(180)" fill={color}>
-				<path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937,c8.395,8.451,19.562,12.254,
-				30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937,c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+		<svg viewBox="0 0 22 22" width={size} height={size}>
+			<g transform="matrix(.03541-.00013.00013.03541 4 19) rotate(-90)" fill={color} preserveAspectRatio="xMidYMid meet">
+				<path d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 
+				0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"/>
 			</g>
 		</svg>
 	)

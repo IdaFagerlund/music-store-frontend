@@ -61,14 +61,13 @@ export default function LoginAndRegisterModal({ initialView }) {
         return (
             <div className={styles.DemoInformation}>
                 <h2>Demo website</h2>
-                <p>To see the most of what this site have to offer, log in with either:</p><br />
+                <p>JWT based login system. Create an account or try one of the provided ones. Users and admins have access to different things on the site.</p><br />
                 <p className={styles.Accounts}>username: user<br />password: user</p>
                 <br />
                 <p className={styles.Accounts}>username: admin<br />password: admin</p> <br />
-                <p>
-                    These accounts have some preset product reviews and orders etc that can be seen. To remain this site in a demoable state, no user requests that changes data on the site
-                    will go through on the server, for example adding new product reviews as a user or changing the product inventory as an admin. Use one of these accounts to view how it theoretically would have looked.
-                </p>
+                <p>If you change data on the site, for example add a product review, this will actually be saved in the database on the server side and will be visible to anyone that visits this page for a while ahead so please be mindful of that.</p>
+                <br />
+                <p>I'll create a better way to handle that in one of the future updates. Everything is work in progress.</p>
             </div>
         )
     }

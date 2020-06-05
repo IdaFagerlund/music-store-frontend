@@ -23,7 +23,7 @@ export default function ProductInfoCard({ product }) {
             <div className={styles.BottomRow}>
                 <div className={styles.AddToShoppingCartButton}><ShoppingCartIcon /></div>
                 <div className={styles.ViewProductDetailsButton} onClick={() => history.push(`/product/${product.id}`)}>
-                    <p>Details</p><ArrowRightIcon size={15} />
+                    <p>Details</p><ArrowRightIcon size={24} />
                 </div>
             </div>
         </div>

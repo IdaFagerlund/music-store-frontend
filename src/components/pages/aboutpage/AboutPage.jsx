@@ -6,9 +6,30 @@ import styles from "./AboutPage.module.scss"
 export default function AboutPage() {
     return (
         <div className={styles.AboutPage}>
-            <p>About page.</p>
-            <p>I will have a link to the source code here.</p>
-            <p>I will also briefly write about things such as which programming languages that were used as well as other interesting info.</p>
+            <p>(work in progress)</p>
+            <p>hello :)</p>
+            <br />
+
+            <h2>Source code</h2>
+            <p>Check out the source code for the project here!</p>
+            <a href="https://github.com/IdaFagerlund/music-store">https://github.com/IdaFagerlund/music-store</a>
+            <br /><br /><br />
+
+            <h2>About</h2>
+            <p>The purpose of this website is to put together a fullstack application that I can use as a portfolio project to showcase that I can build
+            applications and use programming languages and tools such as for example Java and React.</p>
+            <p>The site is a work in progress but I'll keep working on it when I have the time until it's complete.</p>
+            <br /><br />
+
+            <h3>Programming languages and tools</h3>
+            <div><p><b>Backend:&nbsp;</b></p><p>Java, SpringBoot, Hibernate, MySQL, JWT</p></div>
+            <div><p><b>Frontend:&nbsp;</b></p><p>React, Redux, scss modules</p></div>
+            <div><p><b>Other:&nbsp;</b></p><p>Docker and docker compose, Nginx, AWS EC2 hosting</p></div>
+
+            <br /><br />
+            <h2>Contact</h2>
+            <p>ida.fagerlund@hotmail.com</p>
+            <p>https://www.linkedin.com/in/ida-fagerlund-a2b5b9182/</p>
         </div>
     )
 }
