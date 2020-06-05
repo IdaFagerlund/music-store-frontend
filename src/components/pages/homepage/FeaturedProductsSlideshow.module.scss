@@ -1,6 +1,7 @@
 @import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
+
 .FeaturedProductsSlideshow {
     background-color: $grey1;
     display: flex;
@@ -45,6 +46,7 @@
     }
 }
 
+
 @media (max-width: 1093px) { 
     .FeaturedProductsSlideshow {
         max-width: 100%;
@@ -54,13 +56,13 @@
     }
 }
 
-@media (min-width: 1093px) and (max-width: 1500px) {
+@media (min-width: 1093px) and (max-width: $responsive-size-large) {
     .Cards {
         max-width: 40em;
     }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: $responsive-size-large) {
     .Cards {
         max-width: 80em;
     }

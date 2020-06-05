@@ -54,8 +54,8 @@ export default function ProductDetailsPage() {
 
     return (
         <div className={styles.ProductDetailsPage}>
-            <div className={styles.ProductDetailsContainer}><ProductDetailsView product={product.data} /></div>
-            <div className={styles.ReviewSectionContainer}><ReviewSection productId={product.data.id} /></div>
+            <ProductDetailsView product={product.data} />
+            <ReviewSection productId={product.data.id} />
         </div>
     )
 }

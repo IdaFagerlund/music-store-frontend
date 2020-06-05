@@ -1,11 +1,11 @@
 @import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
+
 .ProductDetailsView {
     background-color: $grey1;
     display: flex;
   
-    
     img {
         border: 1px solid black;
     }
@@ -39,6 +39,9 @@
                 align-items: center;
                 color: white;
                 background-color: $green;
+
+                -moz-user-select: none;
+                -webkit-user-select: none;
     
                 p {
                     margin-right: 0.8em;
@@ -49,14 +52,36 @@
                     cursor: pointer;
                 }
             }
-
         }
     }
 }
 
-@media screen and (max-width: $responsive-size-small) {
-    .ProductDetailsView {
 
+@media screen and (max-width: $responsive-size-medium) {
+    .ProductDetailsView {
+        width: 448px;
         flex-direction: column;
+        margin-bottom: 10em;
+
+        .Info {
+            padding-top: 0.5em;
+
+            >* {
+                align-self: flex-start;
+            }
+
+            p {
+                text-align: start;
+            }
+
+            .ProductName {
+                margin-left: 0.6em;
+            }
+
+            .StockAndAddToCartContainer {
+                margin-top: 1.3em;
+                margin-bottom: 1.5em;
+            }
+        }   
     }
 }
