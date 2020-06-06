@@ -9,7 +9,7 @@ import ContainerThatCloseOnOutsideClick from "../../utils/ContainerThatCloseOnOu
 
 export default function SortByDropdownMenu() {
     const sortByCategoryOptions = [
-        { categoryOption: "popularity", sortParameter: "averageReviewStars", doReverseSort: true },
+        { categoryOption: "popularity", sortParameter: "averageStarRating", doReverseSort: true },
         { categoryOption: "price (lowest)", sortParameter: "price", doReverseSort: false },
         { categoryOption: "price (highest)", sortParameter: "price", doReverseSort: true },
         { categoryOption: "alphabetical order", sortParameter: "name", doReverseSort: false },

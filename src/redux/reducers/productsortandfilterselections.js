@@ -1,6 +1,6 @@
 const initialState = {
     currentSelections: {
-        sortParameter: "averageReviewStars",
+        sortParameter: "averageStarRating",
         doReverseSort: true,
         mainCategory: "All",
         subCategory: null

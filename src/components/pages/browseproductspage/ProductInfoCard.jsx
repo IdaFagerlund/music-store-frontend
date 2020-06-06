@@ -18,7 +18,7 @@ export default function ProductInfoCard({ product }) {
             <img src={getImageBasedOnCategory(product.mainCategory, product.subCategory)} width={256} height={256} alt="image" />
             <h1>{product.name}</h1>
             <p>{getFormattedPrice(product.price)}</p>
-            <Stars product={product} />
+            <Stars productReviews={product.reviews} />
             <p>{adaptDescriptionLength(product.description)}</p>
             <div className={styles.BottomRow}>
                 <div className={styles.AddToShoppingCartButton}><ShoppingCartIcon /></div>

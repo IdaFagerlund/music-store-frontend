@@ -1,3 +1,5 @@
+import { getAverageStarRating } from "../../components/pages/productdetailspage/ProductDetailsPage"
+
 const initialState = {
     data: {
         all: [],
@@ -32,9 +34,19 @@ export default function (state = initialState, action) {
                 error: "Error loading products"
             }
         case "SORT_PRODUCTS":
-            const sortedData = action.payload.doReverseSort ?
-                state.data.all.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? -1 : 1) :
-                state.data.all.sort((a, b) => a[action.payload.sortParameter] > b[action.payload.sortParameter] ? 1 : -1)
+            const sortParameter = action.payload.sortParameter
+            let sortedData = state.data.all
+
+            if (sortParameter === "averageStarRating") {
+                sortedData = action.payload.doReverseSort ?
+                    state.data.all.sort((a, b) => getAverageStarRating(a.reviews) > getAverageStarRating(b.reviews) ? -1 : 1) :
+                    state.data.all.sort((a, b) => getAverageStarRating(a.reviews) > getAverageStarRating(b.reviews) ? 1 : -1)
+            }
+            else {
+                sortedData = action.payload.doReverseSort ?
+                    state.data.all.sort((a, b) => a[sortParameter] > b[sortParameter] ? -1 : 1) :
+                    state.data.all.sort((a, b) => a[sortParameter] > b[sortParameter] ? 1 : -1)
+            }
 
             return {
                 ...state,

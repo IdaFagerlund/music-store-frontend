@@ -60,17 +60,20 @@ export default function ProductDetailsPage() {
     )
 }
 
-
-export const Stars = ({ product }) => {
-    const numberOfReviews = product.reviews.length
-    const totalStars = product.reviews.reduce((currentTotalStars, thisObject) => currentTotalStars + thisObject.stars, 0)
+export const getAverageStarRating = (productReviews) => {
+    const numberOfReviews = productReviews.length
+    const totalStars = productReviews.reduce((currentTotalStars, thisObject) => currentTotalStars + thisObject.stars, 0)
     const averageStarRating = Math.round(totalStars / numberOfReviews)
+    return averageStarRating ? averageStarRating : 0
+}
 
+
+export const Stars = ({ productReviews }) => {
     let stars = []
     for (let i = 1; i <= 5; i++) {
-        stars.push(<div key={i} className={styles.Star}><StarIcon color={i <= averageStarRating ? "#FFFA3F" : "#E0E0E0"} /></div>)
+        stars.push(<div key={i} className={styles.Star}><StarIcon color={i <= getAverageStarRating(productReviews) ? "#FFFA3F" : "#E0E0E0"} /></div>)
     }
-    return <div className={styles.Rating}>{stars}<p>{`(${numberOfReviews})`}</p></div>
+    return <div className={styles.Rating}>{stars}<p>{`(${productReviews.length})`}</p></div>
 }
 
 

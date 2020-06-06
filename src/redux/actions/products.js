@@ -14,7 +14,7 @@ export const fetchProducts = () => {
                 })
                 dispatch({
                     type: "SORT_PRODUCTS",
-                    payload: { sortParameter: "averageReviewStars", doReverseSort: true }
+                    payload: { sortParameter: "averageStarRating", doReverseSort: true }
                 })
             })
             .catch((errorResponse) => {
