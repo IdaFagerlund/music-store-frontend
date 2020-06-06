@@ -55,7 +55,7 @@ export default function ProductDetailsPage() {
     return (
         <div className={styles.ProductDetailsPage}>
             <ProductDetailsView product={product.data} />
-            <ReviewSection productId={product.data.id} />
+            <ReviewSection productReviews={product.data.reviews} />
         </div>
     )
 }
@@ -68,12 +68,17 @@ export const getAverageStarRating = (productReviews) => {
 }
 
 
-export const Stars = ({ productReviews }) => {
+export const Stars = ({ productReviews, displayNumberNextToStars }) => {
     let stars = []
     for (let i = 1; i <= 5; i++) {
         stars.push(<div key={i} className={styles.Star}><StarIcon color={i <= getAverageStarRating(productReviews) ? "#FFFA3F" : "#E0E0E0"} /></div>)
     }
-    return <div className={styles.Rating}>{stars}<p>{`(${productReviews.length})`}</p></div>
+    return (
+        <div className={styles.Rating}>
+            {stars}
+            {displayNumberNextToStars && <p>{`(${productReviews.length})`}</p>}
+        </div>
+    )
 }
 
 

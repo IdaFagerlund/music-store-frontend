@@ -13,7 +13,7 @@ export default function ProductDetailsView({ product }) {
             <div className={styles.Info}>
                 <h1 className={styles.ProductName}>{product.name}</h1>
                 <p>{getFormattedPrice(product.price)}</p>
-                <Stars product={product} />
+                <Stars productReviews={product.reviews} displayNumberNextToStars={true} />
                 <p>{product.description}</p>
                 <div className={styles.StockAndAddToCartContainer}>
                     <p><b>{`In stock: ${product.stock}`}</b></p>

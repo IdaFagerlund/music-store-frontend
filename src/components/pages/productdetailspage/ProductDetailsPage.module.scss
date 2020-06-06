@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 60em;
     
     margin: 3em auto 0 auto;
 }
@@ -21,14 +22,5 @@
 
     .Star {
         margin: 0.3em 0.3em 0.3em 0;
-    }
-}
-
-
-@media screen and (min-width: $responsive-size-medium) {
-    .ProductDetailsPage {
-        min-width: 60em;
-        width: 60%;
-        max-width: 80em;
     }
 }
