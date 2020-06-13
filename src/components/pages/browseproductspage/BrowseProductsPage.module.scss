@@ -3,50 +3,54 @@
 
 .BrowseProductsPage {
 
-    .ProductFilterComponent {
-        width: 80%;
-        margin: 1em auto 0 auto;
-    }
-
-    .ProductSortMenuComponent {
-        width: 80%;
-        margin: 1em auto 1em auto;
-        display: flex;
-        justify-content: flex-end;
-
-        .SelectSortBy {
-            border: 1px solid black;
-            outline: none;
-            padding: 0.6em 0 0.6em 0.6em;
-            font-size: 15px;
-            position: relative; 
-        }
-        
-        .form-select {
-            background-color: red;
-            background: red;
-        }
-    }
-
-    .ProductList {
-        width: 80%;
+    .SortMenuAndProductList {
         max-width: 120em;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 7em;
-        padding-top: 4.5em;
-       
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        background-color: $grey1;
 
-        .FakeProductInfoCard {
-            width: 256px + 18px + 18px;
+        .ProductFilterComponent {
+            margin: 1em auto 0 auto;
         }
-
-        >* {
-            margin: 15px; 
+    
+        .ProductSortMenuComponent {
+            width: 80%;
+            margin: 1em auto 1em auto;
+            display: flex;
+            justify-content: flex-end;
+    
+            .SelectSortBy {
+                border: 1px solid black;
+                outline: none;
+                padding: 0.6em 0 0.6em 0.6em;
+                font-size: 15px;
+                position: relative; 
+            }
+            
+            .form-select {
+                background-color: red;
+                background: red;
+            }
+        }
+    
+        .ProductList {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 7em;
+            padding-top: 4.5em;
+           
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: $grey1;
+    
+            .FakeProductInfoCard {
+                width: 256px + 18px + 18px;
+            }
+    
+            >* {
+                margin: 15px; 
+            }
         }
     }
 }

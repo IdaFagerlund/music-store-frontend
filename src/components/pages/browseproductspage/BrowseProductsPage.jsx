@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import styles from "./BrowseProductsPage.module.scss"
 import ProductInfoCard from "./ProductInfoCard"
@@ -28,12 +28,13 @@ export default function BrowseProductsPage() {
         )
     }
 
-
     return (
         <div className={styles.BrowseProductsPage}>
             <ProductCategories />
-            <div className={styles.ProductSortMenuComponent}><SortByDropdownMenu /></div>
-            <ProductList />
+            <div className={styles.SortMenuAndProductList}>
+                <div className={styles.ProductSortMenuComponent}><SortByDropdownMenu /></div>
+                <ProductList />
+            </div>
         </div>
     )
 

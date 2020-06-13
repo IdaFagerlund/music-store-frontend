@@ -16,9 +16,11 @@ export default function AboutPage() {
             <br /><br /><br />
 
             <h2>About</h2>
-            <p>The purpose of this website is to put together a fullstack application that I can use as a portfolio project to showcase that I can build
-            applications and use programming languages and tools such as for example Java and React.</p>
-            <p>The site is a work in progress but I'll keep working on it when I have the time until it's complete.</p>
+            <p>
+                The purpose of this website is to put together a fullstack application that I can use as a portfolio project to showcase some of my programming knowledge.
+                I'm also using this project to learn and explore some parts in application development I want to understand better.
+                The site is a work in progress but I'll keep working on it when I have the time until it's complete.
+            </p>
             <br /><br />
 
             <h3>Programming languages and tools</h3>
@@ -30,6 +32,7 @@ export default function AboutPage() {
             <h2>Contact</h2>
             <p>ida.fagerlund@hotmail.com</p>
             <p>https://www.linkedin.com/in/ida-fagerlund-a2b5b9182/</p>
+            <br /><br /><br /><br />
         </div>
     )
 }

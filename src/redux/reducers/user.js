@@ -15,10 +15,6 @@ const initialState = {
     }
 }
 
-// The authorities etc saved in the state are only used for visual purposes like for example displaying the admin page. If someone "hacked" past that so they could see 
-// it without actually having the right authorities it doesn't mean they could do anything with it since the server only reads from your JWT at requests and when they 
-// would try to edit data it would know they aren't who they say they are and not allow them. Apart from that, if this was a "real" application it would probably also
-// make more sense to have the user part of a website and the administrative part of a website as two separate web applications.
 
 export default function (state = initialState, action) {
     switch (action.type) {
@@ -44,7 +40,6 @@ export default function (state = initialState, action) {
                 isLoading: false
             }
         case "LOGIN_REFRESH":
-            // Refreshing the page resets the state. Check if the user is logged in.
             if (window.localStorage.getItem("token") != null) {
                 return {
                     ...state,
@@ -92,21 +87,6 @@ export default function (state = initialState, action) {
                 isLoading: false,
                 error: "Server error"
             }
-        // case "USER_DATA_SUCCESS":
-        //     return {
-        //         ...state,
-        //         data: {
-        //             ...state.data,
-        //             ...action.payload
-        //         },
-        //         isLoading: false
-        //     }
-        // case "USER_DATA_FAIL":
-        //     return {
-        //         ...state,
-        //         isLoading: false,
-        //         error: action.payload.error
-        //     }
 
         default:
             return state
