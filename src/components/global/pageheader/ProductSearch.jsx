@@ -15,21 +15,15 @@ export default function ProductSearch() {
 
 
     const SearchResults = () => {
-        const filteredResults = products.data.all.filter(product => product.name.includes(searchText))
+        const filteredResults = products.data.all.filter(product => product.name.toLowerCase().split(" ").join("").includes(searchText.toLowerCase().split(" ").join("")))
         const maxAmountOfResultsToShow = 7
 
         const searchResults = filteredResults.slice(0, maxAmountOfResultsToShow).map(product => {
-            const highlightedProductName = [
-                product.name.substring(0, product.name.indexOf(searchText)),
-                searchText,
-                product.name.substring(product.name.indexOf(searchText) + searchText.length, product.name.length)
-            ]
-
             return (
                 <div className={styles.SearchResult} key={product.id} onClick={() => { history.push(`/product/${product.id}`); setSearchText("") }}>
                     <div className={styles.ImageAndNameContainer}>
                         <img src={getImageBasedOnCategory(product.mainCategory, product.subCategory)} width={64} height={64} alt="image" />
-                        <p>{highlightedProductName[0]}</p><p><b>{highlightedProductName[1]}</b></p><p>{highlightedProductName[2]}</p>
+                        <p>{product.name}</p>
                     </div>
                     <ArrowRightIcon size={24} color={"#808080"} />
                 </div>
