@@ -1,12 +1,12 @@
 @import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
+
 .BrowseProductsPage {
 
     .SortMenuAndProductList {
         max-width: 120em;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 2em auto 0 auto;
 
         .ProductFilterComponent {
             margin: 1em auto 0 auto;
@@ -29,27 +29,6 @@
             .form-select {
                 background-color: red;
                 background: red;
-            }
-        }
-    
-        .ProductList {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 7em;
-            padding-top: 4.5em;
-           
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background-color: $grey1;
-    
-            .FakeProductInfoCard {
-                width: 256px + 18px + 18px;
-            }
-    
-            >* {
-                margin: 15px; 
             }
         }
     }

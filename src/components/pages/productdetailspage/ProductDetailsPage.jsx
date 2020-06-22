@@ -12,16 +12,18 @@ import GrandPianoImage from "../../../assets/grand_piano.png"
 import KeyboardImage from "../../../assets/keyboard.png"
 import DrumsImage from "../../../assets/drumset.png"
 import TrumpetImage from "../../../assets/trumpet.png"
+import products from "../../../redux/reducers/products"
 
 
 export default function ProductDetailsPage() {
     const location = useLocation()
     const history = useHistory()
     const dispatch = useDispatch()
-    const [product, setProduct] = useState({
+    const [product, setProduct] = useState({ //todo, rethink this. probably pass as prop but if the user enters the url directly, do a backend request. look over redux structure etc. 
         data: useSelector((state) => state.products.data.all.find(product => product.id === getProductIdFromURL())),
         error: null
     })
+    const products = useSelector((state) => state.products.data.all)
 
 
     function getProductIdFromURL() {
@@ -31,13 +33,19 @@ export default function ProductDetailsPage() {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+
         if (!product.data) {
             const productPromise = dispatch((fetchProductById(getProductIdFromURL())))
             productPromise
                 .then((data) => setProduct({ data: data, error: null }))
                 .catch((error) => setProduct({ data: null, error: "Failed to load product" }))
         }
-    }, [])
+        else {
+            //console.log(products) refactor
+            setProduct({ data: products.find(product => product.id === getProductIdFromURL()), error: null })
+        }
+    }, [location])
 
 
     if (!product.data) {
@@ -45,7 +53,7 @@ export default function ProductDetailsPage() {
             <div className={styles.ProductDetailsPage}>
                 {product.error ?
                     <p className={styles.Error}>{product.error}</p> :
-                    <div className={styles.Loading}>loaaading animation</div>
+                    <div className={styles.Loading}>loaaading animation. todo</div>
                 }
             </div>
         )
@@ -55,11 +63,12 @@ export default function ProductDetailsPage() {
     return (
         <div className={styles.ProductDetailsPage}>
             <ProductDetailsView product={product.data} />
-            <ReviewSection productReviews={product.data.reviews} />
+            <ReviewSection productReviews={product.data.reviews} productId={getProductIdFromURL()} />
         </div>
     )
 }
 
+//todo, should reusable stuff be "owned" by some component or should they be placed somewhere else
 export const getAverageStarRating = (productReviews) => {
     const numberOfReviews = productReviews.length
     const totalStars = productReviews.reduce((currentTotalStars, thisObject) => currentTotalStars + thisObject.stars, 0)

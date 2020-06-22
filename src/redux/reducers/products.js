@@ -9,6 +9,8 @@ const initialState = {
     error: null
 }
 
+//todo: rethink redux architecture everywhere
+
 export default function (state = initialState, action) {
     switch (action.type) {
         case "FETCH_PRODUCTS_LOADING":

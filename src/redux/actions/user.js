@@ -87,26 +87,3 @@ export const logout = () => {
         })
     }
 }
-
-// export const getUserData = () => { // TODO. this gets reviews and orders when visiting the profile page
-//     return (dispatch) => {
-//         dispatch({
-//             type: "USER_LOADING"
-//         })
-//         fetchGet({ url: "/users/" })
-//             .then((data) => {
-//                 dispatch({
-//                     type: "USER_DATA_SUCCESS"
-//                 })
-//             })
-//             .catch((error) => {
-//                 dispatch({
-//                     type: "USER_DATA_FAIL"
-//                 })
-//             })
-//     }
-// }
-
-//TODO: add/edit/remove review, add order. edit user such as password
-
-

@@ -10,7 +10,7 @@ import AdminPage from "./pages/adminpage/AdminPage"
 import BrowseProductsPage from "./pages/browseproductspage/BrowseProductsPage"
 import HomePage from "./pages/homepage/HomePage"
 import ProductDetailsPage from "./pages/productdetailspage/ProductDetailsPage"
-import { fetchProducts, refreshLogin, setModalStatus } from "../redux/actions"
+import { fetchProducts, refreshLogin } from "../redux/actions"
 import Modal from "./utils/Modal"
 
 export default function App() {

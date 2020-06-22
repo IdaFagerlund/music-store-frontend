@@ -1,8 +1,21 @@
 @import "../../scss/global/ColorVariables";
 @import "../../scss/global/ScreenSizeResponsivenessVariables";
 
+
 .ReviewSection {
     margin-top: 3em;
+    width: 100%;
+
+    h1 {
+        margin-bottom: 0.1em;
+        align-self: flex-start;
+        font-weight: normal;
+    }
+
+    hr {
+        border: 1px solid $grey2;
+        width: 100%;
+    }
 
     .AddReviewButton {
         display: flex;
@@ -12,11 +25,12 @@
         padding: 0.7em 1em;
         color: white;
         background-color: $orange;
-        //background-color: $grey2;
-        margin-bottom: 1.5em;
+        margin: 1.5em 0;
+        align-self: flex-start;
 
         &:hover {
             cursor: pointer;
+            background-color: $orange-hover;
         }
     }
 
@@ -33,13 +47,9 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0.5em 1em;
-                //background-color: rgb(194, 58, 58);
-                //background-color: rgb(72, 120, 209);
-                //background-color: $orange;
-                background-color: rgb(192, 192, 192);
+                background-color: $grey2;
                 border-radius: 0.3em 0.3em 0 0;  
-                color: white;
-              
+                color: white;   
             }
 
             .ReviewBody {
@@ -61,5 +71,109 @@
                 }
             }
         }
+    }
+
+    .AddReview {
+        background-color: $grey;
+        padding: 1.2em;
+        border-radius: 0.3em;
+        margin: 1.5em 0 3em 0;
+
+        textarea {
+            width: 100%;
+            height: 8em;
+            padding: 0.5em;
+            margin: 1em 0 1.2em 0;
+            border-radius: 0.3em;
+            resize: none;
+            border: 1px solid $grey3;
+            outline: none;
+        }
+
+        .Buttons {
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+
+            >div {
+                padding: 0.5em 1.5em;
+                margin-left: 0.5em;
+                border-radius: 0.2em;
+            }
+
+            .CancelButton {
+                background-color: $grey2;
+                
+                &:hover {
+                    background-color: $grey2-hover;
+                    cursor: pointer;
+                }
+            }
+
+            .AddButton {
+                background-color: $green;
+                
+                &:hover {
+                    background-color: $green-hover;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .StarsAndTextContainer {
+            display: flex;
+            align-items: center;
+            
+            h4 {
+                margin-right: 0.5em;
+            }
+
+            .Stars {
+                display: flex;
+    
+                >* {
+                    padding-right: 0.3em;
+                }
+    
+                &:hover {
+                    cursor: pointer;
+    
+                    div > *:nth-child(3) {
+                        visibility: hidden;
+                    }
+                }
+                
+                >div {
+                    position: relative;
+    
+                    >*:nth-child(n+2) {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+    
+                >div:nth-child(1):hover ~ div > *:nth-child(2) {
+                    visibility: hidden;          
+                }
+                >div:nth-child(2):hover ~ div > *:nth-child(2) {
+                    visibility: hidden;          
+                }
+                >div:nth-child(3):hover ~ div > *:nth-child(2) {
+                    visibility: hidden;          
+                }
+                >div:nth-child(4):hover ~ div > *:nth-child(2) {
+                    visibility: hidden;          
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: $responsive-size-medium) {
+    .ReviewSection {
+        width: 448px;
     }
 }

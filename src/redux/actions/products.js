@@ -1,4 +1,4 @@
-import { fetchGet } from "./api-service"
+import { fetchGet, fetchPost } from "./api-service"
 
 
 export const fetchProducts = () => {
@@ -70,4 +70,30 @@ export const moveFeaturedProducts = (direction) => {
     }
 }
 
+export const addReview = ({ productId, review }) => { //TODO: rethink redux architecture
+    return (dispatch) => {
+        // dispatch({
+        //     type: "CHANGE_REVIEW_LOADING"
+        // })
+        console.log(productId)
+        console.log(review)
+        fetchPost(`/product-reviews/${productId}`, review)
+            .then((response) => {
 
+            })
+            .then((errorResponse) => {
+
+            })
+        // fetchPost(`/product-reviews/${productId}`, review)
+        //     .then((response) => {
+        //         dispatch({
+        //             type: "ADD_REVIEW_SUCCESS"
+        //         })
+        //     })
+        //     .catch((errorResponse) => {
+        //         dispatch({
+        //             type: "CHANGE_REVIEW_FAIL"
+        //         })
+        //     })
+    }
+}
